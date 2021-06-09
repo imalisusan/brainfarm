@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d4755249bd2ad401e48ee43ad07371d",
+    "content-hash": "1289ee99b4564bf2c491b9f0ac657dc3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -217,6 +217,43 @@
                 "source": "https://github.com/DASPRiD/Enum/tree/1.0.3"
             },
             "time": "2020-10-02T16:03:48+00:00"
+        },
+        {
+            "name": "dnsimmons/openweather",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dnsimmons/openweather.git",
+                "reference": "4c555e6f9420affbeb781cf3331ee6826eeb1dba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dnsimmons/openweather/zipball/4c555e6f9420affbeb781cf3331ee6826eeb1dba",
+                "reference": "4c555e6f9420affbeb781cf3331ee6826eeb1dba",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dnsimmons\\OpenWeather\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Simmons",
+                    "email": "hello@dsimmons.me"
+                }
+            ],
+            "description": "OpenWeather is a Laravel package simplifying working with the free Open Weather Map APIs.",
+            "support": {
+                "issues": "https://github.com/dnsimmons/openweather/issues",
+                "source": "https://github.com/dnsimmons/openweather/tree/master"
+            },
+            "time": "2020-07-14T01:16:41+00:00"
         },
         {
             "name": "doctrine/inflector",
