@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="{{ asset('images\logo.svg') }}" class="block h-9 w-auto" />
+                     <x-jet-authentication-card-logo class="block h-9 w-auto" />
                     </a>
                 </div>
 
