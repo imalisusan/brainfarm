@@ -21,7 +21,7 @@ class CreateWeatherConditionsTable extends Migration
             $table->integer('temperature');
             $table->integer('pressure');
             $table->integer('humidity');
-            $table->foreginId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

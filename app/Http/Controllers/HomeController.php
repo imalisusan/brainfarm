@@ -11,7 +11,9 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        Util::get_weather_condition();
-        return view('dashboard');
+        $weather = Util::get_weather_condition();
+        $weather = (object)$weather;
+        $url = $weather->condition_icon;
+        return view('dashboard', compact('weather', 'url') );
     }
 }
