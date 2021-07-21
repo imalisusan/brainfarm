@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'api_key' 				=> '2d27619283879f46cf347130cfba77e4',
+    'api_key' 				=> 'a6430da3b270e5fa9bd6fb36a21ec483',
     'api_endpoint_current'  => 'https://api.openweathermap.org/data/2.5/weather?',
     'api_endpoint_forecast' => 'https://api.openweathermap.org/data/2.5/forecast?',
     'api_endpoint_onecall'  => 'https://api.openweathermap.org/data/2.5/onecall?',

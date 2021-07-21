@@ -14,7 +14,6 @@ class Util {
         $user = Auth::user();
         $weather = new OpenWeather();
         $current = $weather->getCurrentWeatherByCityName($user->city);
-
         $weather = NULL;
         $weather['condition'] = Arr::get($current, 'condition.name');
         $weather['condition_desc'] = Arr::get($current, 'condition.desc');

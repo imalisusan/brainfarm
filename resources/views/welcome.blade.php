@@ -21,7 +21,7 @@
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                   {{  $weather->condition }} -
                                   {{  $weather->condition_desc }}
-                                  <img src="{{ url($url) }}" alt="icon"> <br>
+                                
                                   Temperature: {{  $weather->temperature }} &deg;C <br>
                                   Atmospheric Pressure: {{  $weather->pressure }} <br>
                                   Humidity: {{  $weather->humidity }}

@@ -14,6 +14,7 @@ class HomeController extends Controller
         $weather = Util::get_weather_condition();
         $weather = (object)$weather;
         $url = $weather->condition_icon;
+      //  dd($weather);
         return view('dashboard', compact('weather', 'url') );
     }
 }
