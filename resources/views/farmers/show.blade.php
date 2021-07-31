@@ -55,7 +55,7 @@
                         <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
                             <div class="flex  mb-10 lg:items-start items-center">
                                 <div class="flex-grow">
-                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Module Name</h2>
+                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Email Address</h2>
                                     <p class="leading-relaxed text-base">{{ $farmer->email }}
                                     </p>
                                 </div>

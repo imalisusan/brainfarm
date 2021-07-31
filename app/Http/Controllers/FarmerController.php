@@ -22,6 +22,13 @@ class FarmerController extends Controller
         return view('farmers.index', compact('farmers'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+    public function pending_accounts(Request $request)
+    {
+        $farmers = Farmer::latest()->paginate(20);
+
+        return view('farmers.pending', compact('farmers'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
     public function create()
     {
         return view('farmers.create');
@@ -77,4 +84,12 @@ class FarmerController extends Controller
         return redirect()->route('farmers.index')->with('success','Farmer deleted successfully');
     }
 
+    public function approve_farmer(Request $request, Farmer $farmer)
+    {
+        $validated = $farmer;
+        $validated['status'] = "Approved";
+        $farmer->update((array) $validated);
+
+        return redirect()->route('farmers.pending',compact('farmer'))->with('success','Farmer approved successfully');
+    }
 }

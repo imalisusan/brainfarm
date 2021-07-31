@@ -9,7 +9,8 @@ use LaravelViews\Views\TableView;
 use LaravelViews\Actions\RedirectAction;
 use Illuminate\Database\Eloquent\Builder;
 
-class FarmersTableView extends TableView
+
+class PendingAccountsTableView extends TableView
 {
     protected $paginate = 20;
 
@@ -21,7 +22,7 @@ class FarmersTableView extends TableView
      */
     public function repository(): Builder
     {
-        return Farmer::query()->where('status', "Approved");
+        return Farmer::query()->where('status', "Pending");
     }
 
     /**

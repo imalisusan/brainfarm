@@ -17,7 +17,8 @@ class CreateFarmersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-
+            $table->text('phone');
+            $table->text('address');
             $table->foreignId('user_id')->constrained();
             $table->enum('status')->default('Pending');
             $table->timestamps();

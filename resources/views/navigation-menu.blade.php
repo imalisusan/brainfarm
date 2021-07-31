@@ -28,7 +28,7 @@
                         {{ __('Expenditure') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('farmers.index') }}"  class="text-gray-700 text-sm font-small">
+                    <x-jet-nav-link href="{{ route('farmers.pending') }}"  class="text-gray-700 text-sm font-small">
                         {{ __('Pending Farmers') }}
                     </x-jet-nav-link>
 
