@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1289ee99b4564bf2c491b9f0ac657dc3",
+    "content-hash": "40c8f8d3a3c93fa44b486a86cd9967f6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -114,6 +114,84 @@
                 "source": "https://github.com/Bacon/BaconQrCode/tree/2.0.3"
             },
             "time": "2020-10-30T02:02:47+00:00"
+        },
+        {
+            "name": "blade-ui-kit/blade-ui-kit",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/blade-ui-kit/blade-ui-kit.git",
+                "reference": "28f4a43a817f381b1590e30c877655e3bcdd190a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/blade-ui-kit/blade-ui-kit/zipball/28f4a43a817f381b1590e30c877655e3bcdd190a",
+                "reference": "28f4a43a817f381b1590e30c877655e3bcdd190a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/filesystem": "^7.0|^8.0",
+                "illuminate/support": "^7.0|^8.0",
+                "illuminate/view": "^7.0|^8.0",
+                "nesbot/carbon": "^2.38",
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "gajus/dindent": "^2.0",
+                "guzzlehttp/guzzle": "^6.5",
+                "league/commonmark": "^1.4",
+                "lorisleiva/cron-translator": "^0.1.1",
+                "orchestra/testbench": "^5.0|^6.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "suggest": {
+                "league/commonmark": "Required to use the markdown component (^1.4).",
+                "lorisleiva/cron-translator": "Required to use the cron component (^0.1.1)."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BladeUIKit\\BladeUIKitServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BladeUIKit\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dries Vints",
+                    "email": "dries@vints.io",
+                    "homepage": "https://driesvints.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A set of renderless components to utilise in your Laravel Blade views.",
+            "homepage": "https://github.com/blade-ui-kit/blade-ui-kit",
+            "keywords": [
+                "blade",
+                "laravel",
+                "ui"
+            ],
+            "support": {
+                "issues": "https://github.com/blade-ui-kit/blade-ui-kit/issues",
+                "source": "https://github.com/blade-ui-kit/blade-ui-kit"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/driesvints",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-10-31T20:40:44+00:00"
         },
         {
             "name": "brick/math",
@@ -1127,6 +1205,65 @@
                 }
             ],
             "time": "2020-06-13T08:05:20+00:00"
+        },
+        {
+            "name": "laravel-views/laravel-views",
+            "version": "v2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gustavinho/laravel-views.git",
+                "reference": "486bfb4c119d7cdb6e396157baf41d5ee7e47e73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Gustavinho/laravel-views/zipball/486bfb4c119d7cdb6e396157baf41d5ee7e47e73",
+                "reference": "486bfb4c119d7cdb6e396157baf41d5ee7e47e73",
+                "shasum": ""
+            },
+            "require": {
+                "livewire/livewire": "2.*"
+            },
+            "require-dev": {
+                "laravel/legacy-factories": "^1.1",
+                "orchestra/testbench": "4.*|5.*|6.*",
+                "phpunit/phpunit": "7.0.*|8.5.*|9.5.*",
+                "spatie/laravel-ray": "^1.12"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelViews\\LaravelViewsServiceProvider"
+                    ],
+                    "aliases": {
+                        "LaravelViews": "LaravelViews\\Facades\\LaravelViews",
+                        "Variants": "LaravelViews\\Facades\\Variants",
+                        "UI": "LaravelViews\\Facades\\UI"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelViews\\": "src",
+                    "LaravelViews\\Test\\": "tests"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gustavo Martinez",
+                    "email": "gustavinho.martinez@gmail.com"
+                }
+            ],
+            "description": "Laravel package to create beautiful common views like tables using only PHP code",
+            "support": {
+                "issues": "https://github.com/Gustavinho/laravel-views/issues",
+                "source": "https://github.com/Gustavinho/laravel-views/tree/v2.3.0"
+            },
+            "time": "2021-06-27T01:38:38+00:00"
         },
         {
             "name": "laravel/fortify",
@@ -8060,5 +8197,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }

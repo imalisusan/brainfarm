@@ -21,6 +21,7 @@ class Util {
         $weather['temperature'] = Arr::get($current, 'forecast.temp');
         $weather['pressure'] = Arr::get($current, 'forecast.pressure');
         $weather['humidity'] = Arr::get($current, 'forecast.humidity');
+        //dd($weather);
         return $weather;
     }
        
