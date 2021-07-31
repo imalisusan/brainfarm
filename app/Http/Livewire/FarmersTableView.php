@@ -46,7 +46,7 @@ class FarmersTableView extends TableView
      *
      * @param $model Current model for each row
      */
-    public function row(Lecturer $farmer): array
+    public function row(Farmer $farmer): array
     {
         return [
             $farmer->name,
