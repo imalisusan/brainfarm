@@ -24,12 +24,12 @@
                         {{ __('Income') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" class="text-gray-700 text-sm font-small">
+                    <x-jet-nav-link href="{{ route('expenditures.index') }}" :active="request()->routeIs('expenditures.index')" class="text-gray-700 text-sm font-small">
                         {{ __('Expenditure') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" class="text-gray-700 text-sm font-small">
-                        {{ __('Users') }}
+                    <x-jet-nav-link href="{{ route('farmers.index') }}"  class="text-gray-700 text-sm font-small">
+                        {{ __('Pending Farmers') }}
                     </x-jet-nav-link>
 
                 </div>

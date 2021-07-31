@@ -15,6 +15,7 @@ class Farmer extends Model
         'phone',
         'address',
         'user_id',
+        'pending',
     ];
 
     public function user()
@@ -25,5 +26,10 @@ class Farmer extends Model
     public function income()
     {
         return $this->hasmMany(Income::class);
+    }
+
+    public function expenditure()
+    {
+        return $this->hasmMany(Expenditure::class);
     }
 }
