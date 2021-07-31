@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FarmerController;
+use App\Http\Controllers\IncomeController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
@@ -34,7 +35,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::resources([
         'farmers' => FarmerController::class,
-        'income' => IncomeController::class,
+        'incomes' => IncomeController::class,
         'expenditures' => ExpenditureController::class,
         'users' => UserController::class,
         

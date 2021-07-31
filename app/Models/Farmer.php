@@ -21,4 +21,9 @@ class Farmer extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function income()
+    {
+        return $this->hasmMany(Income::class);
+    }
 }
