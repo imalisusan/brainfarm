@@ -2,18 +2,18 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Farmer;
+use App\Models\Expenditure;
 use App\Actions\DeleteAction;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
 use LaravelViews\Actions\RedirectAction;
 use Illuminate\Database\Eloquent\Builder;
 
-class FarmersTableView extends TableView
+class ExpendituresTableView extends TableView
 {
     protected $paginate = 20;
 
-    public $searchBy = ['name', 'email', 'phone', 'address', 'created_at'];
+    public $searchBy = ['date', 'amount', 'description'];
     /**
      * Sets a initial query with the data to fill the table
      *
@@ -21,7 +21,7 @@ class FarmersTableView extends TableView
      */
     public function repository(): Builder
     {
-        return Farmer::query();
+        return Expenditure::query();
     }
 
     /**
@@ -31,12 +31,12 @@ class FarmersTableView extends TableView
      */
     public function headers(): array
     {
-        return [
-            Header::title('Name')->sortBy('name'),
-            Header::title('Email')->sortBy('email'),
-            Header::title('Phone')->sortBy('phone'),
-            Header::title('Address')->sortBy('address'),
-            Header::title('Joined')->sortBy('created_at'),
+        return [ 
+            Header::title('Type')->sortBy('type'),
+            Header::title('Date')->sortBy('date'),
+            Header::title('Amount')->sortBy('amount'),
+            Header::title('Description')->sortBy('description'),
+            Header::title('Farmer')->sortBy(''),
             Header::title('Actions'),
             ];
     }
@@ -46,22 +46,22 @@ class FarmersTableView extends TableView
      *
      * @param $model Current model for each row
      */
-    public function row(Farmer $farmer): array
+    public function row(Expenditure $expenditure): array
     {
         return [
-            $farmer->name,
-            $farmer->email,
-            $farmer->phone,
-            $farmer->address,
-            $farmer->created_at,
+            $expenditure->type,
+            $expenditure->date,
+            $expenditure->amount,
+            $expenditure->description,
+            $expenditure->farmer->name,
         ];
     }
 
     protected function actionsByRow()
     {
             return [
-                new RedirectAction('farmers.show', 'See farmer', 'maximize-2'),
-                new RedirectAction('farmers.edit', 'Edit farmer', 'edit-3'),
+                new RedirectAction('expenditures.show', 'See expenditure', 'maximize-2'),
+                new RedirectAction('expenditures.edit', 'Edit expenditure', 'edit'),
                 new DeleteAction(),
             ];
 
