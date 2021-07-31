@@ -10,7 +10,7 @@ class Income extends Model
     use HasFactory;
 
     protected $fillable = [
-        'month',
+        'date',
         'amount',
         'description',
         'farmer_id',

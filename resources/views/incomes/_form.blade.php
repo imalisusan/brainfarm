@@ -3,40 +3,37 @@
        
 
         <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-            <x-label for="income name*" class="block uppercase text-xs font-bold mb-2" />
-            <input type="text" name="name" class="form-input appearance-none block w-full bg-grey-lighter text-grey-darker border border-red
+            <x-label for="date*" class="block uppercase text-xs font-bold mb-2" />
+            <input type="date" name="date" class="form-input appearance-none block w-full bg-grey-lighter text-grey-darker border border-red
             rounded py-3
-            px-4 mb-3" value="{{isset($income) ? $income->name : old('name') }}">
-            <x-error field="name" class="text-red-600" />
+            px-4 mb-3" value="{{isset($income) ? $income->date : old('date') }}">
+            <x-error field="date" class="text-red-600" />
         </div>
 
         <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-            <x-label for="email*" class="block uppercase text-xs font-bold mb-2" />
-            <input type="email" name="email" class="form-input appearance-none block w-full bg-grey-lighter text-grey-darker border border-red
+            <x-label for="amount*" class="block uppercase text-xs font-bold mb-2" />
+            <input type="number" name="amount" class="form-input appearance-none block w-full bg-grey-lighter text-grey-darker border border-red
             rounded py-3
-            px-4 mb-3" value="{{isset($income) ? $income->email : old('email') }}">
-            <x-error field="name" class="text-red-600" />
+            px-4 mb-3" value="{{isset($income) ? $income->amount : old('amount') }}">
+            <x-error field="amount" class="text-red-600" />
         </div>
     </div>
 
     <div class="-mx-3 md:flex mb-6">
         
         <div class="md:w-1/2 px-3">
-            <x-label for="phone*" class="block uppercase text-xs font-bold mb-2" />
-                <input type="text" name="phone" class="form-input appearance-none block w-full bg-grey-lighter text-grey-darker border border-red
+            <x-label for="description*" class="block uppercase text-xs font-bold mb-2" />
+                <textarea type="text" name="description" class="form-input appearance-none block w-full bg-grey-lighter text-grey-darker border border-red
                 rounded py-3 px-4 mb-3"
-                value="{{ isset($income) ? $income->phone :old('phone') }}" style="border:1px solid rgb(104, 104, 104);">
-                <x-error field="phone" class="text-red-600" />
+                value="{{ isset($income) ? $income->description :old('description') }}" style="border:1px solid rgb(104, 104, 104);">
+                    {{ isset($income) ? $income->description :old('description')  }}
+                </textarea>
+                <x-error field="description" class="text-red-600" />
         </div>
 
-        <div class="md:w-1/2 px-3">
-            <x-label for="address*" class="block uppercase text-xs font-bold mb-2" />
-                <input type="text" name="address" class="form-input appearance-none block w-full bg-grey-lighter text-grey-darker border border-red
-                rounded py-3 px-4 mb-3" 
-                value="{{ isset($income) ? $income->address :old('address') }}" style="border:1px solid rgb(104, 104, 104);">
-                <x-error field="address" class="text-red-600" />
-        </div>
+        
     </div>
+    <input type="hidden" name="farmer_id" value="1">
 
 
         <div class="md:flex place-self-center">
