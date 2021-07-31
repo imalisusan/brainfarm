@@ -26,18 +26,18 @@
 
                             <div class="flex  mb-10 lg:items-start items-center">
                                 <div class="flex-grow">
-                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Name</h2>
-                                    <p class="leading-relaxed text-base">{{ $income->name }}
+                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Date</h2>
+                                    <p class="leading-relaxed text-base">{{ $income->date }}
                                     </p>
                                 </div>
                             </div>
 
                             <div class="flex  mb-10 lg:items-start items-center">
                                 <div class="flex-grow">
-                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Phone
+                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Amount
                                     </h2>
                                     <p class="leading-relaxed text-base">
-                                        {{  $income->phone }}
+                                        {{  $income->amount }}
                                     </p>
                                 </div>
                             </div>
@@ -55,19 +55,13 @@
                         <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
                             <div class="flex  mb-10 lg:items-start items-center">
                                 <div class="flex-grow">
-                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Module Name</h2>
-                                    <p class="leading-relaxed text-base">{{ $income->email }}
+                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Description</h2>
+                                    <p class="leading-relaxed text-base">{{ $income->description }}
                                     </p>
                                 </div>
                             </div>
 
-                            <div class="flex  mb-10 lg:items-start items-center">
-                                <div class="flex-grow">
-                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Address</h2>
-                                    <p class="leading-relaxed text-base">{{ $income->address }}
-                                    </p>
-                                </div>
-                            </div>
+                          
 
 
                         </div>

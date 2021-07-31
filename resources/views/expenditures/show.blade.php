@@ -26,25 +26,25 @@
 
                             <div class="flex  mb-10 lg:items-start items-center">
                                 <div class="flex-grow">
-                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Name</h2>
-                                    <p class="leading-relaxed text-base">{{ $expenditure->name }}
+                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Type</h2>
+                                    <p class="leading-relaxed text-base">{{ $expenditure->type }}
                                     </p>
                                 </div>
                             </div>
 
                             <div class="flex  mb-10 lg:items-start items-center">
                                 <div class="flex-grow">
-                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Phone
+                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Date
                                     </h2>
                                     <p class="leading-relaxed text-base">
-                                        {{  $expenditure->phone }}
+                                        {{  $expenditure->date }}
                                     </p>
                                 </div>
                             </div>
 
                             <div class="flex  mb-10 lg:items-start items-center">
                                 <div class="flex-grow">
-                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Joined On</h2>
+                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Added On</h2>
                                     <p class="leading-relaxed text-base">{{ $expenditure->created_at->calendar() }}
                                     </p>
                                 </div>
@@ -55,16 +55,16 @@
                         <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
                             <div class="flex  mb-10 lg:items-start items-center">
                                 <div class="flex-grow">
-                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Module Name</h2>
-                                    <p class="leading-relaxed text-base">{{ $expenditure->email }}
+                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Amount</h2>
+                                    <p class="leading-relaxed text-base">{{ $expenditure->amount }}
                                     </p>
                                 </div>
                             </div>
 
                             <div class="flex  mb-10 lg:items-start items-center">
                                 <div class="flex-grow">
-                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Address</h2>
-                                    <p class="leading-relaxed text-base">{{ $expenditure->address }}
+                                    <h2 class="text-gray-900 text-lg title-font font-medium mb-3 font-bold">Description</h2>
+                                    <p class="leading-relaxed text-base">{{ $expenditure->description }}
                                     </p>
                                 </div>
                             </div>
