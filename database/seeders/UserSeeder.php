@@ -24,6 +24,7 @@ class UserSeeder extends Seeder
                 'address' => 'OTC Hse, 2nd Flr Konza Rd', 
                 'password' => '12345678',
                 'city' => 'Nairobi',
+                'status' => 'Approved',
                 'email_verified_at' => '2021-07-31 15:25:08',
             ],
             [
@@ -33,6 +34,7 @@ class UserSeeder extends Seeder
                 'address' => 'OTC Hse, 2nd Flr Konza Rd', 
                 'password' => '12345678',
                 'city' => 'Kisumu',
+                'status' => 'Pending',
                 'email_verified_at' => '2021-07-31 15:25:08',
             ],
             [
@@ -41,7 +43,8 @@ class UserSeeder extends Seeder
                 'phone' => '+254712345678', 
                 'address' => 'OTC Hse, 2nd Flr Konza Rd', 
                 'password' => '12345678',
-                'city' => 'Mombasa',    
+                'city' => 'Mombasa',  
+                'status' => 'Pending',  
                 'email_verified_at' => '2021-07-31 15:25:08',
             ],
         ];

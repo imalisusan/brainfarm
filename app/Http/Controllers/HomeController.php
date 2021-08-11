@@ -15,6 +15,7 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
+        
         $weather = Util::get_weather_condition();
         $weather = (object)$weather;
         $url = $weather->condition_icon;
@@ -48,8 +49,14 @@ class HomeController extends Controller
             $margin = NULL;
         }
 
-        
-
-        return view('dashboard', compact('weather', 'url', 'latest_income', 'latest_expenditure', 'profit', 'loss', 'margin') );
+        if($farmer->status == "Pending" || $farmer->status == "Suspended" )
+        {
+            return view('errors.pending');
+        }
+        else
+        {
+            return view('dashboard', compact('weather', 'url', 'latest_income', 'latest_expenditure', 'profit', 'loss', 'margin') );
+        }
+       
     }
 }
