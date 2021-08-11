@@ -36,12 +36,12 @@ class UserSeeder extends Seeder
                 'email_verified_at' => '2021-07-31 15:25:08',
             ],
             [
-                'name' => 'Maryann Gitonga',
-                'email' => 'maryanngitonga@gmail.com',
+                'name' => 'Susan Lungaho',
+                'email' => 'susanimali52@gmail.com',
                 'phone' => '+254712345678', 
                 'address' => 'OTC Hse, 2nd Flr Konza Rd', 
                 'password' => '12345678',
-                'city' => 'Mombasa',
+                'city' => 'Mombasa',    
                 'email_verified_at' => '2021-07-31 15:25:08',
             ],
         ];
@@ -65,7 +65,7 @@ class UserSeeder extends Seeder
                     'user_id' => $user->id,
                   ]);
                  
-                 $user->attachRole('farmer');
+                 $user->attachRole('administrator');
         }
     }
 }

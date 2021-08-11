@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helpers\Util;
 use App\Models\Farmer;
 use App\Models\Income;
+use App\Models\Expenditure;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,13 +19,29 @@ class HomeController extends Controller
         $weather = (object)$weather;
         $url = $weather->condition_icon;
 
-        $farmer = Farmer::where('user_id', 1)->first();
-        dd($farmer);
+        $farmer = Farmer::where('user_id', Auth::user()->id)->first();
+ 
+        $latest_income = Income::where('farmer_id', $farmer->id)->latest()->first();
+        $latest_expenditure = Expenditure::where('farmer_id', $farmer->id)->latest()->first();
 
-        $income = Income::where('farmer_id', $farmer->id)->latest('created_at')->first();
+        $income_sum = Income::where('farmer_id', $farmer->id)->sum('amount');
+        $expenditure_sum = Expenditure::where('farmer_id', $farmer->id)->sum('amount');
 
-        dd($income);
+        $difference = $income_sum - $expenditure_sum;
+        if($difference > 0)
+        {
+            $profit = $difference;
+            $loss = NULL;
+        }
+        else
+        {
+            $loss = $difference;
+            $profit = NULL;
+        }
 
-        return view('dashboard', compact('weather', 'url') );
+        $margin = ($difference/($income_sum + $expenditure_sum)) *100;
+        $margin = round($margin, 2);
+
+        return view('dashboard', compact('weather', 'url', 'latest_income', 'latest_expenditure', 'profit', 'loss', 'margin') );
     }
 }

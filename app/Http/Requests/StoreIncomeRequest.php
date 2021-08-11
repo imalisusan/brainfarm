@@ -24,7 +24,9 @@ class StoreIncomeRequest extends FormRequest
     public function rules()
     {
         return [
-          c
+            'date' => 'required',
+            'amount' => 'required',
+            'description' => 'required',
         ];
     }
 }

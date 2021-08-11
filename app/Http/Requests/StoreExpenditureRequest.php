@@ -28,7 +28,6 @@ class StoreExpenditureRequest extends FormRequest
             'date' => 'required',
             'amount' => 'required',
             'description' => 'required',
-            'farmer_id' => 'required',
         ];
     }
 }

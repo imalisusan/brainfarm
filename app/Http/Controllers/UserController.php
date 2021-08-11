@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Mail\ResetPassword;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -31,13 +33,13 @@ class UserController extends Controller
         if ($saved != null) {
             $validated['user_id'] = $saved->id;
             $user = User::create($validated);
-            $saved->attachRole('user');
+            $saved->attachRole('farmer');
         } else {
             $validated['password'] = Hash::make(Str::random());
             $user = User::create($validated);
-            $user->attachRole('user');
+            $user->attachRole('farmer');
 
-           // Mail::to($user->email)->send(new ResetPassword($user));
+            Mail::to($user->email)->send(new ResetPassword($user));
         }
 
 

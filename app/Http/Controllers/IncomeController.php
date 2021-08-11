@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Farmer;
 use App\Models\Income;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreIncomeRequest;
 
 class IncomeController extends Controller
@@ -24,6 +26,8 @@ class IncomeController extends Controller
     public function store(StoreIncomeRequest $request)
     {
         $validated = $request->validated();
+        $farmer = Farmer::where('user_id', Auth::user()->id)->first();
+        $validated['farmer_id'] = $farmer->id;
         Income::create($validated);
 
         return redirect()->route('incomes.index')->with('success','Income created successfully.');
