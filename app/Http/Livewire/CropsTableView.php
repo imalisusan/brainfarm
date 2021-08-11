@@ -34,8 +34,12 @@ class CropsTableView extends TableView
     {
         return [
             Header::title('Name')->sortBy('name'),
-            Header::title('Description')->sortBy('description'),
-            Header::title('Joined')->sortBy('created_at'),
+            Header::title('Lowest Temp')->sortBy('lowest_temperature'),
+            Header::title('Highest Temp')->sortBy('highest_temperature'),
+            Header::title('Lowest Humidity')->sortBy('lowest_humidity'),
+            Header::title('Highest Humidity')->sortBy('highest_humidity'),
+            Header::title('Lowest Atmospheric Pressure')->sortBy('lowest_atmospheric_pressure'),
+            Header::title('Highest Atmospheric Pressure')->sortBy('highest_atmospheric_pressure'),
             Header::title('Actions'),
             ];
     }
@@ -49,8 +53,12 @@ class CropsTableView extends TableView
     {
         return [
             $crop->name,
-            $crop->description,
-            $crop->created_at,
+            $crop->lowest_temperature,
+            $crop->highest_temperature,
+            $crop->lowest_humidity,
+            $crop->highest_humidity,
+            $crop->lowest_atmospheric_pressure,
+            $crop->highest_atmospheric_pressure,
         ];
     }
 

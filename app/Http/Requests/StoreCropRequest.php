@@ -26,7 +26,6 @@ class StoreCropRequest extends FormRequest
         return [
             'name' => 'required',
             'description' => 'required',
-            'temperature' => 'required',
             'lowest_temperature' => 'required',
             'highest_temperature' => 'required',
             'lowest_humidity' => 'required',
