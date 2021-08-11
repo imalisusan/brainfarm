@@ -59,7 +59,7 @@
 
     <div class="-mx-3 md:flex mb-6">
         <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-            <x-label for="lowest atmospheric pressure*" class="block uppercase text-xs font-bold mb-2" />
+            <x-label for="lowest altitude*" class="block uppercase text-xs font-bold mb-2" />
             <input type="number" name="lowest_atmospheric_pressure" class="form-input appearance-none block w-full bg-grey-lighter text-grey-darker border border-red
             rounded py-3
             px-4 mb-3" value="{{isset($crop) ? $crop->lowest_atmospheric_pressure : old('lowest_atmospheric_pressure') }}">
@@ -67,7 +67,7 @@
         </div>
         
         <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-            <x-label for="highest atmospheric pressure*" class="block uppercase text-xs font-bold mb-2" />
+            <x-label for="highest altitude*" class="block uppercase text-xs font-bold mb-2" />
             <input type="number" name="highest_atmospheric_pressure" class="form-input appearance-none block w-full bg-grey-lighter text-grey-darker border border-red
             rounded py-3
             px-4 mb-3" value="{{isset($crop) ? $crop->highest_atmospheric_pressure : old('highest_atmospheric_pressure') }}">

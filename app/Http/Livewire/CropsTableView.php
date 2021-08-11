@@ -38,8 +38,8 @@ class CropsTableView extends TableView
             Header::title('Highest Temp')->sortBy('highest_temperature'),
             Header::title('Lowest Humidity')->sortBy('lowest_humidity'),
             Header::title('Highest Humidity')->sortBy('highest_humidity'),
-            Header::title('Lowest Atmospheric Pressure')->sortBy('lowest_atmospheric_pressure'),
-            Header::title('Highest Atmospheric Pressure')->sortBy('highest_atmospheric_pressure'),
+            Header::title('Lowest Altitude')->sortBy('lowest_atmospheric_pressure'),
+            Header::title('Highest Altitude')->sortBy('highest_atmospheric_pressure'),
             Header::title('Actions'),
             ];
     }
