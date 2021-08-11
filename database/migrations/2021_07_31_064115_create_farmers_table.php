@@ -20,7 +20,7 @@ class CreateFarmersTable extends Migration
             $table->text('phone');
             $table->text('address');
             $table->foreignId('user_id')->constrained();
-            $table->enum('status')->default('Pending');
+            $table->enum('status', ['Pending', 'Approved', 'Suspended'])->default('Pending');
             $table->timestamps();
         });
     }
