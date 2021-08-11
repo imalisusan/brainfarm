@@ -49,13 +49,13 @@
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                  Latest Income: 
-                                  @if($profit) 
+                                  @if($latest_income) 
                                   {{$latest_income->amount}} 
                                   @endif
                                   <br><br> 
 
                                   Latest Expenditure: 
-                                  @if($profit) 
+                                  @if($latest_expenditure) 
                                   {{$latest_expenditure->amount}} 
                                   @endif
 
@@ -80,7 +80,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                @if($profit) 
+                                @if($latest_income) 
                                     Transaction ID:  {{$latest_income->id}} <br><br> 
                                     Date: {{$latest_income->date}} <br><br>
                                     Amount: {{$latest_income->amount}} <br><br>

@@ -20,6 +20,10 @@
                    <x-jet-nav-link href="{{ route('farmers.index') }}" :active="request()->routeIs('farmers')" class="text-gray-700 text-sm font-small">
                         {{ __('Farmers') }}
                     </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{ route('crops.index') }}" :active="request()->routeIs('crops')" class="text-gray-700 text-sm font-small">
+                        {{ __('Crops') }}
+                    </x-jet-nav-link>
                    @endrole
 
                    @role('farmer')
@@ -29,6 +33,10 @@
 
                     <x-jet-nav-link href="{{ route('expenditures.index') }}" :active="request()->routeIs('expenditures.index')" class="text-gray-700 text-sm font-small">
                         {{ __('Expenditure') }}
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{ route('farmercrops.index') }}" :active="request()->routeIs('farmercrops')" class="text-gray-700 text-sm font-small">
+                        {{ __('Growths') }}
                     </x-jet-nav-link>
 
                     

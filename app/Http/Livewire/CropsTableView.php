@@ -2,20 +2,19 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Farmer;
-use App\Models\Income;
+
+use App\Models\Crop;
 use App\Actions\DeleteAction;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
-use Illuminate\Support\Facades\Auth;
 use LaravelViews\Actions\RedirectAction;
 use Illuminate\Database\Eloquent\Builder;
 
-class IncomesTableView extends TableView
+class CropsTableView extends TableView
 {
     protected $paginate = 20;
 
-    public $searchBy = ['date', 'amount', 'description'];
+    public $searchBy = ['name', 'description', 'created_at'];
     /**
      * Sets a initial query with the data to fill the table
      *
@@ -23,8 +22,7 @@ class IncomesTableView extends TableView
      */
     public function repository(): Builder
     {
-        $farmer = Farmer::where('user_id', Auth::user()->id)->first();
-        return Income::query()->where('farmer_id', $farmer->id);
+        return Crop::query();
     }
 
     /**
@@ -35,10 +33,9 @@ class IncomesTableView extends TableView
     public function headers(): array
     {
         return [
-            Header::title('Date')->sortBy('date'),
-            Header::title('Amount')->sortBy('amount'),
+            Header::title('Name')->sortBy('name'),
             Header::title('Description')->sortBy('description'),
-            Header::title('Farmer')->sortBy(''),
+            Header::title('Joined')->sortBy('created_at'),
             Header::title('Actions'),
             ];
     }
@@ -48,21 +45,20 @@ class IncomesTableView extends TableView
      *
      * @param $model Current model for each row
      */
-    public function row(Income $income): array
+    public function row(Crop $crop): array
     {
         return [
-            $income->date,
-            $income->amount,
-            $income->description,
-            $income->farmer->name,
+            $crop->name,
+            $crop->description,
+            $crop->created_at,
         ];
     }
 
     protected function actionsByRow()
     {
             return [
-                new RedirectAction('incomes.show', 'See income', 'maximize-2'),
-                new RedirectAction('incomes.edit', 'Edit income', 'edit'),
+                new RedirectAction('crops.show', 'See crop', 'maximize-2'),
+                new RedirectAction('crops.edit', 'Edit crop', 'edit-3'),
                 new DeleteAction(),
             ];
 

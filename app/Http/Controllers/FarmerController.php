@@ -53,7 +53,7 @@ class FarmerController extends Controller
             $validated['user_id'] = $user->id;
             Farmer::create($validated);
 
-           Mail::to($user->email)->send(new ResetPassword($user));
+         //  Mail::to($user->email)->send(new ResetPassword($user));
         }
 
 

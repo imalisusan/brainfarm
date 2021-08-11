@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CropController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FarmerController;
 use App\Http\Controllers\IncomeController;
+use App\Http\Controllers\FarmerCropController;
 use App\Http\Controllers\ExpenditureController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -40,6 +42,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         'incomes' => IncomeController::class,
         'expenditures' => ExpenditureController::class,
         'users' => UserController::class,
+        'crops' => CropController::class,
+        'farmercrops' => FarmerCropController::class,
         
     ]);
 
