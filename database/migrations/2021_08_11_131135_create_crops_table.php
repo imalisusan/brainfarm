@@ -17,6 +17,12 @@ class CreateCropsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
+            $table->integer('lowest_temperature')->nullable();
+            $table->integer('highest_temperature')->nullable();
+            $table->integer('lowest_humidity')->nullable();
+            $table->integer('highest_humidity')->nullable();
+            $table->integer('lowest_atmospheric_pressure')->nullable();
+            $table->integer('highest_atmospheric_pressure')->nullable();
             $table->timestamps();
         });
     }

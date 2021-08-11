@@ -12,6 +12,13 @@ class Crop extends Model
     protected $fillable = [
         'name',
         'description',
+        'temperature',
+        'lowest_temperature',
+        'highest_temperature',
+        'lowest_humidity',
+        'highest_humidity',
+        'lowest_atmospheric_pressure',
+        'highest_atmospheric_pressure',
     ];
 
     public function farmer()

@@ -24,8 +24,15 @@ class StoreCropRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'nullable',
-            'description' => 'nullable',
+            'name' => 'required',
+            'description' => 'required',
+            'temperature' => 'required',
+            'lowest_temperature' => 'required',
+            'highest_temperature' => 'required',
+            'lowest_humidity' => 'required',
+            'highest_humidity' => 'required',
+            'lowest_atmospheric_pressure' => 'required',
+            'highest_atmospheric_pressure' => 'required',
         ];
     }
 }
