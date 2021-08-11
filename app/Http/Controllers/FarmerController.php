@@ -93,6 +93,15 @@ class FarmerController extends Controller
         return redirect()->route('farmers.pending',compact('farmer'))->with('success','Farmer approved successfully');
     }
 
+    public function suspend_farmer(Request $request, Farmer $farmer)
+    {
+        $validated = $farmer;
+        $validated['status'] = "Suspended";
+        $farmer->update((array) $validated);
+
+        return redirect()->route('farmers.index',compact('farmer'))->with('success','Farmer account suspended successfully');
+    }
+
     public function reset_password_farmer(Request $request, Farmer $farmer)
     {
         $validated = $farmer;

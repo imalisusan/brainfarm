@@ -30,6 +30,8 @@
                     <x-jet-nav-link href="{{ route('expenditures.index') }}" :active="request()->routeIs('expenditures.index')" class="text-gray-700 text-sm font-small">
                         {{ __('Expenditure') }}
                     </x-jet-nav-link>
+
+                    
                     @endrole
 
                     @role('administrator')

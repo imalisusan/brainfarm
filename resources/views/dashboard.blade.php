@@ -48,8 +48,18 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                 Latest Income:  {{$latest_income->amount}} <br><br> 
-                                  Latest Expenditure: {{$latest_expenditure->amount}} <br><br>
+                                 Latest Income: 
+                                  @if($profit) 
+                                  {{$latest_income->amount}} 
+                                  @endif
+                                  <br><br> 
+
+                                  Latest Expenditure: 
+                                  @if($profit) 
+                                  {{$latest_expenditure->amount}} 
+                                  @endif
+
+                                  <br><br>
                                   @if($profit)
                                     Profit: {{$profit}} <br> <br>
                                     Profit Margin: {{$margin}} %<br>
@@ -70,10 +80,12 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                Transaction ID:  {{$latest_income->id}} <br><br> 
-                                  Date: {{$latest_income->date}} <br><br>
-                                  Amount: {{$latest_income->amount}} <br><br>
-                                  Description: {{$latest_income->description}} <br>
+                                @if($profit) 
+                                    Transaction ID:  {{$latest_income->id}} <br><br> 
+                                    Date: {{$latest_income->date}} <br><br>
+                                    Amount: {{$latest_income->amount}} <br><br>
+                                    Description: {{$latest_income->description}} <br>
+                                  @endif
                                 </div>
                             </div>
                         </div>

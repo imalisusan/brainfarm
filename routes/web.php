@@ -47,6 +47,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
     Route::get('/approve/{farmer}',[FarmerController::class, 'approve_farmer'])->name('farmers.approve');
+    Route::get('/suspend/{farmer}',[FarmerController::class, 'suspend_farmer'])->name('farmers.suspend');
     Route::get('/reset/{farmer}',[FarmerController::class, 'reset_password_farmer'])->name('farmers.reset');
     Route::get('pending/accounts', [FarmerController::class, 'pending_accounts'])->name('farmers.pending');
 

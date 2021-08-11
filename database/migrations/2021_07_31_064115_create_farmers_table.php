@@ -17,8 +17,8 @@ class CreateFarmersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->text('phone');
-            $table->text('address');
+            $table->text('phone')->nullable();
+            $table->text('address')->nullable();
             $table->foreignId('user_id')->constrained();
             $table->enum('status', ['Pending', 'Approved', 'Suspended'])->default('Pending');
             $table->timestamps();

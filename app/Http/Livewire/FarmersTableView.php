@@ -60,7 +60,7 @@ class FarmersTableView extends TableView
     protected function actionsByRow()
     {
             return [
-                new RedirectAction('farmers.reset', 'Reset Password', 'edit'),
+                new RedirectAction('farmers.suspend', 'Suspend farmer', 'alert-circle'),
                 new RedirectAction('farmers.show', 'See farmer', 'maximize-2'),
                 new RedirectAction('farmers.edit', 'Edit farmer', 'edit-3'),
                 new DeleteAction(),

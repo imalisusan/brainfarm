@@ -38,9 +38,17 @@ class HomeController extends Controller
             $loss = $difference;
             $profit = NULL;
         }
+        if($difference)
+        {
+            $margin = ($difference/($income_sum + $expenditure_sum)) *100;
+            $margin = round($margin, 2);
+        }
+        else
+        {
+            $margin = NULL;
+        }
 
-        $margin = ($difference/($income_sum + $expenditure_sum)) *100;
-        $margin = round($margin, 2);
+        
 
         return view('dashboard', compact('weather', 'url', 'latest_income', 'latest_expenditure', 'profit', 'loss', 'margin') );
     }
