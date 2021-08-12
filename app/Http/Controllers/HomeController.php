@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tip;
 use App\Helpers\Util;
 use App\Models\Farmer;
 use App\Models\Income;
@@ -49,13 +50,15 @@ class HomeController extends Controller
             $margin = NULL;
         }
 
+        $tip = Tip::all()->random();
+
         if($farmer->status == "Pending" || $farmer->status == "Suspended" )
         {
             return view('errors.pending');
         }
         else
         {
-            return view('dashboard', compact('weather', 'url', 'latest_income', 'latest_expenditure', 'profit', 'loss', 'margin') );
+            return view('dashboard', compact('weather', 'url', 'latest_income', 'latest_expenditure', 'profit', 'loss', 'margin', 'tip') );
         }
        
     }
