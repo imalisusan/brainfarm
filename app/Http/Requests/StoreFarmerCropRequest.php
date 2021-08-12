@@ -24,8 +24,9 @@ class StoreFarmerCropRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => 'nullable',
-            'crop_id' => 'nullable',
+            'user_id' => 'required',
+            'crop_id' => 'required',
+            'amount' => 'required',
         ];
     }
 }
