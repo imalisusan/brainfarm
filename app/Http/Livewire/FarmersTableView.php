@@ -61,6 +61,7 @@ class FarmersTableView extends TableView
     {
             return [
                 new RedirectAction('farmers.suspend', 'Suspend farmer', 'alert-circle'),
+                new RedirectAction('farmers.reset', 'Reset Password', 'key'),
                 new RedirectAction('farmers.show', 'See farmer', 'maximize-2'),
                 new RedirectAction('farmers.edit', 'Edit farmer', 'edit-3'),
                 new DeleteAction(),

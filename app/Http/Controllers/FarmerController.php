@@ -110,6 +110,6 @@ class FarmerController extends Controller
 
         Mail::to($user->email)->send(new ResetPassword($user));
 
-        return redirect()->route('farmers.pending',compact('farmer'))->with('success','Password reset successfully');
+        return redirect()->route('farmers.index')->with('success','Password reset email sent successfully');
     }
 }

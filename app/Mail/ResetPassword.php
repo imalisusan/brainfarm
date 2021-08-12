@@ -32,8 +32,8 @@ class ResetPassword extends Mailable
     public function build()
     {
         return $this
-        ->subject('Account Activation')
-        ->markdown('emails.forgot')
+        ->subject('Reset Password')
+        ->markdown('emails.activate')
         ->with([
             'name' => $this->user->name,
             'link' => route('password.request'),
