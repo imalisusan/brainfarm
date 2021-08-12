@@ -98,7 +98,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                Successful farming operations are based on diligent planning. A plan will help you decide what type of farming you want to engage in, where and how you will do it. My first vegetable farming business didn't work out well due to simply not having a well-thought-out plan on what goes into proper land preparation. You need to explore different options and pick one that suits you best and go ahead and seek some advice from already established farmers.
+                             {{ $tip->description }}
                                 </div>
                             </div>
                         </div>
