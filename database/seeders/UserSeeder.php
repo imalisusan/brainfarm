@@ -21,16 +21,30 @@ class UserSeeder extends Seeder
                 'name' => 'Imali Susan',
                 'email' => 'imalisusan@gmail.com',
                 'phone' => '+254712345678', 
-                'address' => 'Occaecat id quibusd Occaecat id quibusd', 
+                'address' => 'OTC Hse, 2nd Flr Konza Rd', 
                 'password' => '12345678',
+                'city' => 'Nairobi',
+                'status' => 'Approved',
                 'email_verified_at' => '2021-07-31 15:25:08',
             ],
             [
                 'name' => 'Maya Bororio',
                 'email' => 'mayabororio@gmail.com',
                 'phone' => '+254712345678', 
-                'address' => 'Occaecat id quibusd Occaecat id quibusd', 
+                'address' => 'OTC Hse, 2nd Flr Konza Rd', 
                 'password' => '12345678',
+                'city' => 'Kisumu',
+                'status' => 'Pending',
+                'email_verified_at' => '2021-07-31 15:25:08',
+            ],
+            [
+                'name' => 'Susan Lungaho',
+                'email' => 'susanimali52@gmail.com',
+                'phone' => '+254712345678', 
+                'address' => 'OTC Hse, 2nd Flr Konza Rd', 
+                'password' => '12345678',
+                'city' => 'Mombasa',  
+                'status' => 'Pending',  
                 'email_verified_at' => '2021-07-31 15:25:08',
             ],
         ];
@@ -41,6 +55,7 @@ class UserSeeder extends Seeder
                    'email' => $user['email'],
                    'phone' => $user['phone'],
                    'address' => $user['address'],
+                   'city' => $user['city'],
                    'password' => Hash::make($user['password']),
                    'email_verified_at' => $user['email_verified_at'],
                  ]);
@@ -53,7 +68,7 @@ class UserSeeder extends Seeder
                     'user_id' => $user->id,
                   ]);
                  
-                 $user->attachRole('farmer');
+                 $user->attachRole('administrator');
         }
     }
 }

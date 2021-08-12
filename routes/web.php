@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CropController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FarmerController;
 use App\Http\Controllers\IncomeController;
+use App\Http\Controllers\FarmerCropController;
 use App\Http\Controllers\ExpenditureController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -32,6 +34,7 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
 
+
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::resources([
@@ -39,6 +42,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         'incomes' => IncomeController::class,
         'expenditures' => ExpenditureController::class,
         'users' => UserController::class,
+        'crops' => CropController::class,
+        'farmercrops' => FarmerCropController::class,
         
     ]);
 
@@ -46,6 +51,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
     Route::get('/approve/{farmer}',[FarmerController::class, 'approve_farmer'])->name('farmers.approve');
+    Route::get('/suspend/{farmer}',[FarmerController::class, 'suspend_farmer'])->name('farmers.suspend');
+    Route::get('/reset/{farmer}',[FarmerController::class, 'reset_password_farmer'])->name('farmers.reset');
     Route::get('pending/accounts', [FarmerController::class, 'pending_accounts'])->name('farmers.pending');
 
 

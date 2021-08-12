@@ -4,11 +4,14 @@ namespace App\Actions\Fortify;
 
 use App\Models\Team;
 use App\Models\User;
+use App\Models\Farmer;
+use App\Mail\ResetPassword;
+use Laravel\Jetstream\Jetstream;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
-use Laravel\Jetstream\Jetstream;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -36,7 +39,13 @@ class CreateNewUser implements CreatesNewUsers
                 'city' => $input['city'],
                 'password' => Hash::make($input['password']),
         ]);
-
+        Farmer::create([
+                'name' => $input['name'],
+                'email' => $input['email'],
+                'user_id' => $user->id,
+        ]);
+        $user->attachRole('farmer');
+        
         return $user;
 
     }
