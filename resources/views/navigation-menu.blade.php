@@ -16,10 +16,17 @@
                         {{ __('Home') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('farmers.index') }}" :active="request()->routeIs('farmers')" class="text-gray-700 text-sm font-small">
+                   @role('administrator')
+                   <x-jet-nav-link href="{{ route('farmers.index') }}" :active="request()->routeIs('farmers')" class="text-gray-700 text-sm font-small">
                         {{ __('Farmers') }}
                     </x-jet-nav-link>
 
+                    <x-jet-nav-link href="{{ route('crops.index') }}" :active="request()->routeIs('crops')" class="text-gray-700 text-sm font-small">
+                        {{ __('Crops') }}
+                    </x-jet-nav-link>
+                   @endrole
+
+                   @role('farmer')
                     <x-jet-nav-link href="{{ route('incomes.index') }}" :active="request()->routeIs('incomes')" class="text-gray-700 text-sm font-small">
                         {{ __('Income') }}
                     </x-jet-nav-link>
@@ -28,9 +35,19 @@
                         {{ __('Expenditure') }}
                     </x-jet-nav-link>
 
+                    <x-jet-nav-link href="{{ route('farmercrops.index') }}" :active="request()->routeIs('farmercrops')" class="text-gray-700 text-sm font-small">
+                        {{ __('Growths') }}
+                    </x-jet-nav-link>
+
+                    
+                    @endrole
+
+                    @role('administrator')
                     <x-jet-nav-link href="{{ route('farmers.pending') }}"  class="text-gray-700 text-sm font-small">
                         {{ __('Pending Farmers') }}
                     </x-jet-nav-link>
+                    @endrole
+
 
                 </div>
             </div>

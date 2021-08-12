@@ -2,10 +2,12 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Farmer;
 use App\Models\Expenditure;
 use App\Actions\DeleteAction;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
+use Illuminate\Support\Facades\Auth;
 use LaravelViews\Actions\RedirectAction;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -21,7 +23,8 @@ class ExpendituresTableView extends TableView
      */
     public function repository(): Builder
     {
-        return Expenditure::query();
+        $farmer = Farmer::where('user_id', Auth::user()->id)->first();
+        return Expenditure::query()->where('farmer_id', $farmer->id);
     }
 
     /**

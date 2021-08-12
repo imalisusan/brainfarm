@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreIncomeRequest extends FormRequest
+class StoreFarmerCropRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,8 @@ class StoreIncomeRequest extends FormRequest
     public function rules()
     {
         return [
-            'date' => 'required',
-            'amount' => 'required',
-            'description' => 'required',
+            'user_id' => 'nullable',
+            'crop_id' => 'nullable',
         ];
     }
 }

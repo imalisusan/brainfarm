@@ -33,7 +33,6 @@
 
         
     </div>
-    <input type="hidden" name="farmer_id" value="1">
 
 
         <div class="md:flex place-self-center">

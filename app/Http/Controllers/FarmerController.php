@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Farmer;
+use App\Mail\ResetPassword;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -11,7 +12,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\StoreFarmerRequest;
-use Illuminate\Auth\Notifications\ResetPassword;
 
 class FarmerController extends Controller
 {
@@ -53,7 +53,7 @@ class FarmerController extends Controller
             $validated['user_id'] = $user->id;
             Farmer::create($validated);
 
-           // Mail::to($user->email)->send(new ResetPassword($user));
+         //  Mail::to($user->email)->send(new ResetPassword($user));
         }
 
 
@@ -91,5 +91,25 @@ class FarmerController extends Controller
         $farmer->update((array) $validated);
 
         return redirect()->route('farmers.pending',compact('farmer'))->with('success','Farmer approved successfully');
+    }
+
+    public function suspend_farmer(Request $request, Farmer $farmer)
+    {
+        $validated = $farmer;
+        $validated['status'] = "Suspended";
+        $farmer->update((array) $validated);
+
+        return redirect()->route('farmers.index',compact('farmer'))->with('success','Farmer account suspended successfully');
+    }
+
+    public function reset_password_farmer(Request $request, Farmer $farmer)
+    {
+        $validated = $farmer;
+
+        $user = User::find($farmer->user_id);
+
+        Mail::to($user->email)->send(new ResetPassword($user));
+
+        return redirect()->route('farmers.index')->with('success','Password reset email sent successfully');
     }
 }

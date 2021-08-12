@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Farmer;
 use App\Models\Expenditure;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreExpenditureRequest;
 
 class ExpenditureController extends Controller
@@ -24,6 +26,8 @@ class ExpenditureController extends Controller
     public function store(StoreExpenditureRequest $request)
     {
         $validated = $request->validated();
+        $farmer = Farmer::where('user_id', Auth::user()->id)->first();
+        $validated['farmer_id'] = $farmer->id;
         Expenditure::create($validated);
 
         return redirect()->route('expenditures.index')->with('success','Expenditure created successfully.');

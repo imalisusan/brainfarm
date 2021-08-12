@@ -3,17 +3,19 @@
 namespace App\Http\Livewire;
 
 use App\Models\Farmer;
+use App\Models\FarmerCrop;
 use App\Actions\DeleteAction;
 use LaravelViews\Facades\Header;
 use LaravelViews\Views\TableView;
+use Illuminate\Support\Facades\Auth;
 use LaravelViews\Actions\RedirectAction;
 use Illuminate\Database\Eloquent\Builder;
 
-class FarmersTableView extends TableView
+class FarmerCropsTableView extends TableView
 {
     protected $paginate = 20;
 
-    public $searchBy = ['name', 'email', 'phone', 'address', 'created_at'];
+    public $searchBy = ['name', 'amount', 'created_at'];
     /**
      * Sets a initial query with the data to fill the table
      *
@@ -21,7 +23,9 @@ class FarmersTableView extends TableView
      */
     public function repository(): Builder
     {
-        return Farmer::query()->where('status', "Approved");
+        $farmer = Farmer::where('user_id', Auth::user()->id)->first();
+
+        return FarmerCrop::query()->where('farmer_id', $farmer->id);
     }
 
     /**
@@ -32,11 +36,8 @@ class FarmersTableView extends TableView
     public function headers(): array
     {
         return [
-            Header::title('Name')->sortBy('name'),
-            Header::title('Email')->sortBy('email'),
-            Header::title('Phone')->sortBy('phone'),
-            Header::title('Address')->sortBy('address'),
-            Header::title('Joined')->sortBy('created_at'),
+            Header::title('Crop Name')->sortBy('crop.name'),
+            Header::title('Amount')->sortBy('amount'),
             Header::title('Actions'),
             ];
     }
@@ -46,24 +47,20 @@ class FarmersTableView extends TableView
      *
      * @param $model Current model for each row
      */
-    public function row(Farmer $farmer): array
+    public function row(FarmerCrop $farmercrop): array
     {
         return [
-            $farmer->name,
-            $farmer->email,
-            $farmer->phone,
-            $farmer->address,
-            $farmer->created_at,
+            $farmercrop->crop->name,
+            $farmercrop->amount,
+            $farmercrop->created_at,
         ];
     }
 
     protected function actionsByRow()
     {
             return [
-                new RedirectAction('farmers.suspend', 'Suspend farmer', 'alert-circle'),
-                new RedirectAction('farmers.reset', 'Reset Password', 'key'),
-                new RedirectAction('farmers.show', 'See farmer', 'maximize-2'),
-                new RedirectAction('farmers.edit', 'Edit farmer', 'edit-3'),
+                new RedirectAction('farmercrops.show', 'See farmercrop', 'maximize-2'),
+                new RedirectAction('farmercrops.edit', 'Edit farmercrop', 'edit-3'),
                 new DeleteAction(),
             ];
 
