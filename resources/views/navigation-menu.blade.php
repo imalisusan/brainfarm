@@ -21,6 +21,10 @@
                         {{ __('Farmers') }}
                     </x-jet-nav-link>
 
+                    <x-jet-nav-link href="{{ route('farmers.pending') }}"  class="text-gray-700 text-sm font-small">
+                        {{ __('Pending Farmers') }}
+                    </x-jet-nav-link>
+
                     <x-jet-nav-link href="{{ route('crops.index') }}" :active="request()->routeIs('crops')" class="text-gray-700 text-sm font-small">
                         {{ __('Crops') }}
                     </x-jet-nav-link>
@@ -39,12 +43,15 @@
                         {{ __('Growths') }}
                     </x-jet-nav-link>
 
-                    
+                    <x-jet-nav-link href="#" :active="request()->routeIs('farmercrops')" class="text-gray-700 text-sm font-small">
+                        {{ __('All Suggestions') }}
+                    </x-jet-nav-link>
+
                     @endrole
 
                     @role('administrator')
-                    <x-jet-nav-link href="{{ route('farmers.pending') }}"  class="text-gray-700 text-sm font-small">
-                        {{ __('Pending Farmers') }}
+                    <x-jet-nav-link href="/laratrust"  class="text-gray-700 text-sm font-small">
+                        {{ __('Administrator Panel') }}
                     </x-jet-nav-link>
                     @endrole
 
