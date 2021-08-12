@@ -18,10 +18,26 @@
                 <x-jet-label for="email" value="{{ __('Email') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
-
+                <br>
             <div>
                 <x-jet-label for="city" value="{{ __('City') }}" />
-                <x-jet-input id="city" class="block mt-1 w-full" type="text" name="city" :value="old('city')" required  autocomplete="city" />
+               
+                <div class="relative">
+                <select name="city" placeholder="Select a crop type" class="form-select block
+                appearance-none w-full bg-grey-lighter text-grey-darker py-3 px-4 pr-8
+                rounded"
+                style="border: 1px solid #CCCCCC; height:1%;"
+                >
+                    <option>Select an option</option>
+                        <option value="Nairobi" >Nairobi</option>
+                        <option value="Mombasa" >Mombasa</option>
+                        <option value="Kisumu" >Kisumu</option>
+                        <option value="Nakuru" >Nakuru</option>
+                        <option value="Other" >Other</option>
+                </select>
+            </div>
+                
+
             </div>
 
             <div class="mt-4">
@@ -33,7 +49,6 @@
                 <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
-
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
                     <x-jet-label for="terms">
