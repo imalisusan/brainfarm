@@ -43,7 +43,7 @@
                         {{ __('Growths') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="#" :active="request()->routeIs('farmercrops')" class="text-gray-700 text-sm font-small">
+                    <x-jet-nav-link href="{{ route('farmersuggestions.index') }}" :active="request()->routeIs('farmercrops')" class="text-gray-700 text-sm font-small">
                         {{ __('All Suggestions') }}
                     </x-jet-nav-link>
 
