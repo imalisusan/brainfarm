@@ -7,6 +7,7 @@ use App\Http\Controllers\FarmerController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\FarmerCropController;
 use App\Http\Controllers\ExpenditureController;
+use App\Http\Controllers\FarmerSuggestionsController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
@@ -44,6 +45,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         'users' => UserController::class,
         'crops' => CropController::class,
         'farmercrops' => FarmerCropController::class,
+        'farmersuggestions' => FarmerSuggestionsController::class,
         
     ]);
 
