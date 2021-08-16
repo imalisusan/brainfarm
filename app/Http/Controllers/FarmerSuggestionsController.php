@@ -25,7 +25,7 @@ class FarmerSuggestionsController extends Controller
             if ($temperature >= $crops->lowest_temperarure && $temperature <= $crops->highest_temperature)
             {
                 $crops = Crop::all();
-                return view('farmersuggestions.index', compact('crops'));
+                
             }
             else
             {
@@ -33,6 +33,7 @@ class FarmerSuggestionsController extends Controller
             }
             
         }
+        return view('farmersuggestions.index');
     }
 
     /**
