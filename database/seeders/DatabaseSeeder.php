@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(IncomeSeeder::class);
         $this->call(ExpenditureSeeder::class);
         $this->call(CropSeeder::class);
+        $this->call(TipSeeder::class);   
     }
 }

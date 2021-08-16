@@ -7,10 +7,12 @@ use App\Models\Farmer;
 use App\Mail\ResetPassword;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Mail\AccountApproved;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\NewResetPasswordRequest;
 use App\Http\Requests\StoreFarmerRequest;
 
 class FarmerController extends Controller
@@ -53,7 +55,7 @@ class FarmerController extends Controller
             $validated['user_id'] = $user->id;
             Farmer::create($validated);
 
-         //  Mail::to($user->email)->send(new ResetPassword($user));
+            Mail::to($user->email)->send(new ResetPassword($user));
         }
 
 
@@ -90,6 +92,9 @@ class FarmerController extends Controller
         $validated['status'] = "Approved";
         $farmer->update((array) $validated);
 
+        $user = User::find($farmer->user_id);
+        Mail::to($user->email)->send(new AccountApproved($user));
+
         return redirect()->route('farmers.pending',compact('farmer'))->with('success','Farmer approved successfully');
     }
 
@@ -108,7 +113,7 @@ class FarmerController extends Controller
 
         $user = User::find($farmer->user_id);
 
-        Mail::to($user->email)->send(new ResetPassword($user));
+        Mail::to($user->email)->send(new NewResetPasswordRequest($user));
 
         return redirect()->route('farmers.index')->with('success','Password reset email sent successfully');
     }
