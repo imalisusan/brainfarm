@@ -2,48 +2,35 @@
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## About BrainFarm
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+With the developments in technology and advancements made globally, farmers are facing complex decision making due to factors such as global warming, constant change and fluctuation in market prices and prices of relevant inputs. As a result of factors such as global warming, traditional methods of weather forecasting are becoming obsolete and thus farmers are growing plants that do not match the changing conditions. In addition, farmers do not have access to enough tools and information that will help them make informed decisions when it comes to deciding what to plant at specific times of the year. They may end up making losses when this could have been mitigated if they had more viable options at their disposal. 
+Farmers currently get advice on what to plant from websites such as NAFIS that provides current market prices of farm produce, other farmers online from groups such as Digital Farmers Kenya and budgeting analysis from apps such as Budget Mkononi. This separation can be a challenge to track down especially if a farmer is not that conversant with technology.
+The goal of this proposed system therefore, would be to create a recommendation system that would help farmers make better decisions regarding what crops to grow based on their financial situation and weather conditions surrounding them. With these inputs, the system would calculate the farmer’s profit/loss and give the farmer insights on what to plant in order to combat their losses or improve their profit. 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+You will first of all need to install composer dependencies that rely the application relies on. Run the follwoing command:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+composer install
 
-## Laravel Sponsors
+Then you will need to set up the database. Run the follwoing command
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+php artisan migrate
 
-### Premium Partners
+Then import pre-existing data into the database by running
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+php artisan db:seed
+
+## Log In and Try out Some Stuff
+
+Login with any of the accounts located in the User Seeder which have a default password of 12345678
 
 ## Contributing
 
