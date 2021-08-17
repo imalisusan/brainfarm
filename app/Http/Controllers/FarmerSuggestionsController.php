@@ -15,24 +15,6 @@ class FarmerSuggestionsController extends Controller
      */
     public function index(Request $request)
     {
-        $weather = new OpenWeather();
-        $current = $weather->getCurrentWeatherByCityName('Nairobi');
-
-        $weather = NULL;
-        $temperature = $weather['temperature'] = Arr::get($current, 'forecast.temp');
-        foreach (Crop::all() as $crops) 
-        {
-            if ($temperature >= $crops->lowest_temperarure && $temperature <= $crops->highest_temperature)
-            {
-                $crops = Crop::all();
-                
-            }
-            else
-            {
-                
-            }
-            
-        }
         return view('farmersuggestions.index');
     }
 

@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ExpenditureSeeder::class);
         $this->call(CropSeeder::class);
         $this->call(TipSeeder::class);   
+        $this->call(CountySeeder::class);
     }
 }

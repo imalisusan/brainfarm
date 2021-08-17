@@ -28,6 +28,9 @@
                     <x-jet-nav-link href="{{ route('crops.index') }}" :active="request()->routeIs('crops')" class="text-gray-700 text-sm font-small">
                         {{ __('Crops') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('counties.index') }}" :active="request()->routeIs('counties')" class="text-gray-700 text-sm font-small">
+                        {{ __('Counties') }}
+                    </x-jet-nav-link>
                    @endrole
 
                    @role('farmer')

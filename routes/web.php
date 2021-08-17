@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CropController;
+use App\Http\Controllers\CountyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FarmerController;
 use App\Http\Controllers\IncomeController;
@@ -46,6 +47,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         'crops' => CropController::class,
         'farmercrops' => FarmerCropController::class,
         'farmersuggestions' => FarmerSuggestionsController::class,
+        'counties' => CountyController::class,  
         
     ]);
 
