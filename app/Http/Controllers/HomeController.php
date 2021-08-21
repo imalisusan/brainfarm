@@ -20,6 +20,8 @@ class HomeController extends Controller
         $weather = Util::get_weather_condition();
         $weather = (object)$weather;
         $url = $weather->condition_icon;
+        $weather->temperature =  ($weather->temperature - 32) * .5556;
+        $weather->temperature =  round( $weather->temperature, 2);
 
         $farmer = Farmer::where('user_id', Auth::user()->id)->first();
  
