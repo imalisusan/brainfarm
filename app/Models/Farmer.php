@@ -23,13 +23,24 @@ class Farmer extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function income()
+    public function incomes()
     {
-        return $this->hasmMany(Income::class);
+        return $this->hasMany(Income::class);
     }
 
-    public function expenditure()
+    public function expenditures()
     {
-        return $this->hasmMany(Expenditure::class);
+        return $this->hasMany(Expenditure::class);
     }
+
+    public function crops()
+    {
+        return $this->hasMany(Crop::class);
+    }
+
+    public function cropsuggestions()
+    {
+        return $this->hasMany(CropSuggestion::class);
+    }
+
 }

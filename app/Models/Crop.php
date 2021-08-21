@@ -25,4 +25,9 @@ class Crop extends Model
     {
         return $this->belongsTo(Farmer::class);
     }
+    
+    public function cropsuggestions()
+    {
+        return $this->hasMany(CropSuggestion::class);
+    }
 }
