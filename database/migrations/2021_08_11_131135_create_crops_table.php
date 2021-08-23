@@ -23,6 +23,8 @@ class CreateCropsTable extends Migration
             $table->integer('highest_humidity')->nullable();
             $table->integer('lowest_atmospheric_pressure')->nullable();
             $table->integer('highest_atmospheric_pressure')->nullable();
+            $table->float('average_market_price');
+            $table->boolean('in_demand')->nullable();
             $table->timestamps();
         });
     }
