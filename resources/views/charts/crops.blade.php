@@ -8,21 +8,23 @@
   
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript">
-    var users =  <?php echo json_encode($crops) ?>;
+    var crop_prices =  <?php echo json_encode($crop_prices) ?>;
+    var names =  <?php echo json_encode($names) ?>;
    
     Highcharts.chart('container', {
         title: {
-            text: 'Crop Market Demand'
+            text: 'Crop Market Price'
         },
         subtitle: {
             text: 'Source: highcharts.com'
         },
          xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            categories: names
+            //categories: ['Avocado', 'Maize', 'Cabbage', 'Mango', 'Cashew Nuts', 'Cassava', 'Coffee', 'Rice', 'Potato', 'Sweet Potato', 'Tea', 'Wheat', 'Tomato', 'Orange', 'Onion', 'Banana', 'Peas', 'Lemon', 'Kale', 'Millet', 'Sorghum', 'Beans', 'Carrot', 'Pineapple', 'Pawpaw']
         },
         yAxis: {
             title: {
-                text: 'Number of New Users'
+                text: 'Market Price'
             }
         },
         legend: {
@@ -36,8 +38,8 @@
             }
         },
         series: [{
-            name: 'New Users',
-            data: crops
+            name: 'Market Price',
+            data: crop_prices
         }],
         responsive: {
             rules: [{
