@@ -62,6 +62,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/charts/crops', [ChartController::class, 'crops'])->name('charts.crops');
     Route::get('/charts/users', [ChartController::class, 'users'])->name('charts.users');
+    Route::get('/charts/income', [ChartController::class, 'income'])->name('charts.income');
+    Route::get('/charts/expenditure', [ChartController::class, 'expenditure'])->name('charts.expenditure');
 
 
 });
