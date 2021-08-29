@@ -9,6 +9,7 @@ use App\Models\Income;
 use App\Models\Expenditure;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
+use Rainwater\Active\Active;
 use Illuminate\Support\Facades\Auth;
 use Dnsimmons\OpenWeather\OpenWeather;
 
@@ -79,14 +80,11 @@ class HomeController extends Controller
 
         $farmers = Farmer::all();
         $total_farmers = count($farmers);
-
         $pending_farmers = Farmer::where('status', "Pending")->count();
-        //$total_pending_farmers = count($pending_farmers);
-
         $suspended_accounts = Farmer::where('status', "Suspended")->count();
-       // $total_suspended_accounts = count($suspended_accounts);
+        $active_users = Active::usersWithinHours(1)->count();  
 
-        return view('admin-dashboard', compact('weather', 'url', 'tip', 'total_farmers', 'pending_farmers', 'suspended_accounts'));
+        return view('admin-dashboard', compact('weather', 'url', 'tip', 'total_farmers', 'pending_farmers', 'suspended_accounts', 'active_users'));
     }
 }
 

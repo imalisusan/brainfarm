@@ -49,17 +49,12 @@
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                  Total Farmers: {{ $total_farmers}}
-                                 
                                   <br><br> 
-
                                   Total Pending Accounts: {{$pending_farmers}}
-                                  
-
-                                  <br><br>
-                                  
+                                     <br><br>  
                                     Total Suspended Accounts: {{$suspended_accounts}}
-                                    
-                             
+                                    <br><br>
+                                    Total Active Users: {{$active_users}}
                                   
                                 </div>
                             </div>
