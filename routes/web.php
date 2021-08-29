@@ -59,5 +59,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/reset/{farmer}',[FarmerController::class, 'reset_password_farmer'])->name('farmers.reset');
     Route::get('pending/accounts', [FarmerController::class, 'pending_accounts'])->name('farmers.pending');
 
+    Route::get('/crops/chart', [ChartController::class, 'crops']);
+
 
 });
