@@ -23,9 +23,7 @@ class CropController extends Controller
 
     public function store(StoreCropRequest $request)
     {
-        //dd($request);
         $validated = $request->validated();
-     
         Crop::create($validated);
 
         return redirect()->route('crops.index')->with('success','Crop created successfully.');

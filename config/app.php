@@ -178,6 +178,8 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
         Dnsimmons\OpenWeather\OpenWeatherServiceProvider::class,
+        Rainwater\Active\ActiveServiceProvider::class
+
 
     ],
 
@@ -232,6 +234,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'OpenWeather' => Dnsimmons\OpenWeather\OpenWeather::class,	
+        'Active' => Rainwater\Active\ActiveFacade::class
 
 
     ],
