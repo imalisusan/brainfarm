@@ -8,11 +8,11 @@
   
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript">
-    var users =  <?php echo json_encode($crops) ?>;
+    var users =  <?php echo json_encode($users) ?>;
    
     Highcharts.chart('container', {
         title: {
-            text: 'Crop Market Demand'
+            text: 'New User Growth, 2021'
         },
         subtitle: {
             text: 'Source: highcharts.com'
@@ -37,7 +37,7 @@
         },
         series: [{
             name: 'New Users',
-            data: crops
+            data: users
         }],
         responsive: {
             rules: [{

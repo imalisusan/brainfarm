@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CropController;
-use App\Http\Controllers\CountyController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ChartController;
+use App\Http\Controllers\CountyController;
 use App\Http\Controllers\FarmerController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\FarmerCropController;
@@ -59,7 +60,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/reset/{farmer}',[FarmerController::class, 'reset_password_farmer'])->name('farmers.reset');
     Route::get('pending/accounts', [FarmerController::class, 'pending_accounts'])->name('farmers.pending');
 
-    Route::get('/crops/chart', [ChartController::class, 'crops']);
+    Route::get('/charts/crops', [ChartController::class, 'crops'])->name('charts.crops');
+    Route::get('/charts/users', [ChartController::class, 'users'])->name('charts.users');
 
 
 });

@@ -67,6 +67,15 @@
                                     <x-jet-dropdown-link href="{{ route('crops.index') }}">
                                         {{ __('Crops') }}
                                     </x-jet-dropdown-link>
+
+                                    <x-jet-dropdown-link href="{{ route('charts.users') }}">
+                                        {{ __('User Growth') }}
+                                    </x-jet-dropdown-link>
+
+                                    <x-jet-dropdown-link href="{{ route('charts.crops') }}">
+                                        {{ __('Market Prices') }}
+                                    </x-jet-dropdown-link>
+
                                     <x-jet-dropdown-link href="{{ route('counties.index') }}">
                                         {{ __('Counties') }}
                                     </x-jet-dropdown-link> 
