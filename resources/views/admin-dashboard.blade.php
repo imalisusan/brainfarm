@@ -48,25 +48,18 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                 Latest Income: 
-                                  @if($latest_income) 
-                                  {{$latest_income->amount}} 
-                                  @endif
+                                 Total Farmers: {{ $total_farmers}}
+                                 
                                   <br><br> 
 
-                                  Latest Expenditure: 
-                                  @if($latest_expenditure) 
-                                  {{$latest_expenditure->amount}} 
-                                  @endif
+                                  Total Pending Accounts: {{$pending_farmers}}
+                                  
 
                                   <br><br>
-                                  @if($profit)
-                                    Profit: {{$profit}} <br> <br>
-                                    Profit Margin: {{$margin}} %<br>
-                                  @else
-                                    Loss: {{$loss}} <br> <br>
-                                    Loss Margin: {{$margin}} %<br>
-                                  @endif
+                                  
+                                    Total Suspended Accounts: {{$suspended_accounts}}
+                                    
+                             
                                   
                                 </div>
                             </div>
@@ -78,14 +71,12 @@
                                 <div class="ml-4 text-lg leading-7 font-semibold"><a href="" class="underline text-gray-900 dark:text-white">Latest Income</a></div>
                             </div>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                @if($latest_income) 
-                                    Transaction ID:  {{$latest_income->id}} <br><br> 
-                                    Date: {{$latest_income->date}} <br><br>
-                                    Amount: {{$latest_income->amount}} <br><br>
-                                    Description: {{$latest_income->description}} <br>
-                                  @endif
+                            <div>
+                                    Transaction ID:  <br><br> 
+                                    Date: <br><br>
+                                    Amount:  <br><br>
+                                    Description:  <br>
+                                 
                                 </div>
                             </div>
                         </div>
