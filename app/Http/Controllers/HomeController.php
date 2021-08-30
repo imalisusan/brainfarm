@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tip;
+use App\Models\User;
 use App\Helpers\Util;
 use App\Models\Farmer;
 use App\Models\Income;
@@ -12,6 +13,7 @@ use Illuminate\Http\Request;
 use Rainwater\Active\Active;
 use Illuminate\Support\Facades\Auth;
 use Dnsimmons\OpenWeather\OpenWeather;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -84,7 +86,13 @@ class HomeController extends Controller
         $suspended_accounts = Farmer::where('status', "Suspended")->count();
         $active_users = Active::usersWithinHours(1)->count();  
 
-        return view('admin-dashboard', compact('weather', 'url', 'tip', 'total_farmers', 'pending_farmers', 'suspended_accounts', 'active_users'));
+        $users = User::select(\DB::raw("COUNT(*) as count"))
+        ->whereYear('created_at', date('Y'))
+        ->groupBy(\DB::raw("Month(created_at)"))
+        ->pluck('count');
+
+
+        return view('admin-dashboard', compact('weather', 'url', 'tip', 'total_farmers', 'pending_farmers', 'suspended_accounts', 'active_users', 'users'));
     }
 }
 

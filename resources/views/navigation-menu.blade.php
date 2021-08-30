@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-gray-800 border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -12,34 +12,34 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" class="text-gray-700 text-sm font-small">
+                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" class="text-white text-sm font-small" style="color:#FFFFFF;">
                         {{ __('Home') }}
                     </x-jet-nav-link>
 
                    @role('farmer')
-                    <x-jet-nav-link href="{{ route('incomes.index') }}" :active="request()->routeIs('incomes')" class="text-gray-700 text-sm font-small">
+                    <x-jet-nav-link href="{{ route('incomes.index') }}" :active="request()->routeIs('incomes')" class="text-white text-sm font-small" style="color:#FFFFFF;">
                         {{ __('Income') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('expenditures.index') }}" :active="request()->routeIs('expenditures.index')" class="text-gray-700 text-sm font-small">
+                    <x-jet-nav-link href="{{ route('expenditures.index') }}" :active="request()->routeIs('expenditures.index')" class="text-white text-sm font-small" style="color:#FFFFFF;">
                         {{ __('Expenditure') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('farmercrops.index') }}" :active="request()->routeIs('farmercrops')" class="text-gray-700 text-sm font-small">
+                    <x-jet-nav-link href="{{ route('farmercrops.index') }}" :active="request()->routeIs('farmercrops')" class="text-white text-sm font-small" style="color:#FFFFFF;">
                         {{ __('Growths') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('cropsuggestions.index') }}" :active="request()->routeIs('farmercrops')" class="text-gray-700 text-sm font-small">
+                    <x-jet-nav-link href="{{ route('cropsuggestions.index') }}" :active="request()->routeIs('farmercrops')" class="text-white text-sm font-small" style="color:#FFFFFF;">
                         {{ __('All Suggestions') }}
                     </x-jet-nav-link>
 
-                    <!-- Administartor Links -->
-                    <div class="hidden sm:flex sm:items-center sm:ml-6">
-                        <x-jet-dropdown>
-                            <x-slot name="trigger">
+                    <!-- Reports Links -->
+                    <div class="hidden sm:flex sm:items-center sm:ml-6" color:#FFFFFF;">
+                        <x-jet-dropdown class="hover:text-white hover:bg-gray-800">
+                            <x-slot name="trigger" >
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
-                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-white transition ease-in-out duration-150">
+                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-grey-800 hover:bg-grey-800 hover:text-white hover:bg-gray-800 focus:outline-none focus:bg-gray-50 active:bg-grey-800  active:text-white transition ease-in-out duration-150">
                                        Reports                                                                                                        
                                             <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -48,22 +48,21 @@
                                 </span>
                             </x-slot>
                             
-                            <x-slot name="content">
-                                
-                                    <x-jet-dropdown-link href="{{ route('charts.users') }}">
-                                        {{ __('User Growth') }}
-                                    </x-jet-dropdown-link>
-
-                                    <x-jet-dropdown-link href="{{ route('charts.crops') }}">
+                            <x-slot name="content" >
+                                    <x-jet-dropdown-link href="{{ route('charts.crops') }}" style="background-color: #2D3748; color:#FFFFFF;">
                                         {{ __('Market Prices') }}
                                     </x-jet-dropdown-link>
 
-                                    <x-jet-dropdown-link href="{{ route('charts.income') }}">
+                                    <x-jet-dropdown-link href="{{ route('charts.income') }}" style="background-color: #2D3748; color:#FFFFFF;">
                                         {{ __('Income Growth') }}
                                     </x-jet-dropdown-link>
 
-                                    <x-jet-dropdown-link href="{{ route('charts.expenditure') }}">
+                                    <x-jet-dropdown-link href="{{ route('charts.expenditure') }}" style="background-color: #2D3748; color:#FFFFFF;">
                                         {{ __('Expenditure Growth') }}
+                                    </x-jet-dropdown-link>
+
+                                    <x-jet-dropdown-link href="{{ route('charts.profit') }}" style="background-color: #2D3748; color:#FFFFFF;">
+                                        {{ __('Profit/ Loss Growth') }}
                                     </x-jet-dropdown-link>
                             </x-slot>
                         </x-jet-dropdown>
@@ -78,7 +77,7 @@
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
-                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-white transition ease-in-out duration-150">
+                                    class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-grey-800 hover:bg-grey-800 hover:text-white hover:bg-gray-800 focus:outline-none focus:bg-gray-50 active:bg-grey-800 transition ease-in-out duration-150">
                                         Administrator Panel                                                                                                             
                                             <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -88,23 +87,23 @@
                             </x-slot>
                             
                             <x-slot name="content">
-                                    <x-jet-dropdown-link href="/laratrust" >
+                                    <x-jet-dropdown-link href="/laratrust"  style="background-color: #2D3748; color:#FFFFFF;" class="hover:bg-gray-800">
                                         {{ __('Roles & Permissions') }}
                                     </x-jet-dropdown-link>
                                    
-                                    <x-jet-dropdown-link href="{{ route('farmers.index') }}">
+                                    <x-jet-dropdown-link href="{{ route('farmers.index') }}"  style="background-color: #2D3748; color:#FFFFFF;">
                                         {{ __('Farmers') }}
                                     </x-jet-dropdown-link>
 
-                                    <x-jet-dropdown-link href="{{ route('farmers.pending') }}"  >
+                                    <x-jet-dropdown-link href="{{ route('farmers.pending') }}" style="background-color: #2D3748; color:#FFFFFF;">
                                         {{ __('Pending Farmers') }}
                                     </x-jet-dropdown-link>
 
-                                    <x-jet-dropdown-link href="{{ route('crops.index') }}">
+                                    <x-jet-dropdown-link href="{{ route('crops.index') }}"  style="background-color: #2D3748; color:#FFFFFF;">
                                         {{ __('Crops') }}
                                     </x-jet-dropdown-link>
 
-                                    <x-jet-dropdown-link href="{{ route('counties.index') }}">
+                                    <x-jet-dropdown-link href="{{ route('counties.index') }}"  style="background-color: #2D3748; color:#FFFFFF;">
                                         {{ __('Counties') }}
                                     </x-jet-dropdown-link> 
                             </x-slot>
@@ -120,7 +119,7 @@
                 
 
                 <!-- Settings Dropdown -->
-                <div class="ml-3 relative">
+                <div class="ml-3 relative ">
                     <x-jet-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
@@ -129,7 +128,7 @@
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
-                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-grey-800 hover:text-white hover:bg-grey-800 focus:outline-none transition">
                                         {{ Auth::user()->name }}
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -142,31 +141,23 @@
 
                         <x-slot name="content">
                             <!-- Account Management -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
+                            <div class="block px-4 py-2 text-xs" style="background-color: #2D3748; color:#FFFFFF;">
                                 {{ __('Manage Account') }}
                             </div>
 
-                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                            <x-jet-dropdown-link href="{{ route('profile.show') }}" style="background-color: #2D3748; color:#FFFFFF;">
                                 {{ __('Profile') }}
                             </x-jet-dropdown-link>
 
-                            <x-jet-dropdown-link href="{{ route('brainfarmmessenger') }}">
+                            <x-jet-dropdown-link href="{{ route('brainfarmmessenger') }}" style="background-color: #2D3748; color:#FFFFFF;">
                                 {{ __('Brainfarm Messenger') }}
                             </x-jet-dropdown-link>
 
-                            @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                                <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
-                                    {{ __('API Tokens') }}
-                                </x-jet-dropdown-link>
-                            @endif
-
-                            <div class="border-t border-gray-100"></div>
-
                             <!-- Authentication -->
-                            <form method="POST" action="{{ route('logout') }}">
+                            <form method="POST" action="{{ route('logout') }}" >
                                 @csrf
 
-                                <x-jet-dropdown-link href="{{ route('logout') }}"
+                                <x-jet-dropdown-link href="{{ route('logout') }}" style="background-color: #2D3748; color:#FFFFFF;"
                                          onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                     {{ __('Log Out') }}

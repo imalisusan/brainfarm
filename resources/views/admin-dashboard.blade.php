@@ -1,99 +1,180 @@
 
 <x-app-layout>
-    <x-slot name="header">
+<x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }} 
+            {{ __('Admin Dashboard') }} 
         </h2>
     </x-slot>
- <body class="antialiased" style="background-color: transparent;" style="margin-top:0px;">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0" >
-           
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tailwind Starter Template - Night Admin Template: Tailwind Toolbox</title>
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+	
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> <!--Replace with your tailwind.css once created-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-              
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <img src="{{ asset('assets\images\weather.svg') }}" class="block h-9 w-auto" />
-                               
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="" class="underline text-gray-900 dark:text-white">How's the weather like today?</a></div>
-                            </div>
-                            
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                <div>
-                                    <div style="float:left;">
-                                        <img src="{{$url}}" class="block h-9 w-auto" />
-                                    </div> 
-                                    <div style="float:left;">
-                                        {{  $weather->condition }} -
-                                        {{  $weather->condition_desc }}
-                                    </div>
-                                </div>
-                              <br> <br>
-                                
-                                  Temperature: {{  $weather->temperature }} &deg;F <br>
-                                  Atmospheric Pressure: {{  $weather->pressure }} <br>
-                                  Humidity: {{  $weather->humidity }}
-                                </div>
-                            </div>
-                        </div>
+	<style>
+		.bg-black-alt  {
+			background: #2D3748;
+		}
+		.text-black-alt  {
+			color:#191919;
+		}
+		.border-black-alt {
+			border-color: #191919;
+		}
+		
+	</style>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                        <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="" class="underline text-gray-900 dark:text-white">Latest Stats</a></div>
-                            </div>
+</head>
+<body class="bg-black-alt font-sans leading-normal tracking-normal">
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                 Total Farmers: {{ $total_farmers}}
-                                  <br><br> 
-                                  Total Pending Accounts: {{$pending_farmers}}
-                                     <br><br>  
-                                    Total Suspended Accounts: {{$suspended_accounts}}
-                                    <br><br>
-                                    Total Active Users: {{$active_users}}
-                                  
-                                </div>
+	<!--Container-->
+	<div class="container w-full mx-auto pt-3">
+		
+		<div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+			
+			<!--Console Content-->
+			
+			<div class="flex flex-wrap">
+                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                    <!--Metric Card-->
+                    <div class="bg-gray-800 border border-gray-800 rounded shadow p-2">
+                        <div class="flex flex-row items-center">
+                            <div class="flex-shrink pr-4">
+                                <div class="rounded p-3 bg-green-600"><i class="fa fa-user-plus  fa-2x fa-fw fa-inverse"></i></div>
                             </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="" class="underline text-gray-900 dark:text-white">Latest Income</a></div>
-                            </div>
-
-                            <div>
-                                    Transaction ID:  <br><br> 
-                                    Date: <br><br>
-                                    Amount:  <br><br>
-                                    Description:  <br>
-                                 
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="" class="underline text-gray-900 dark:text-white">Today's Tip</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                             {{ $tip->description }}
-                                </div>
+                            <div class="flex-1 text-right md:text-center">
+                                <h5 class="font-bold uppercase text-gray-400">Total Farmers</h5>
+                                <h3 class="font-bold text-3xl text-gray-600">{{ $total_farmers}} <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
                             </div>
                         </div>
                     </div>
+                    <!--/Metric Card-->
                 </div>
-
-               
+                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                    <!--Metric Card-->
+                    <div class="bg-gray-800 border border-gray-800 rounded shadow p-2">
+                        <div class="flex flex-row items-center">
+                            <div class="flex-shrink pr-4">
+                                <div class="rounded p-3 bg-pink-600"><i class="fas fa-hands-helping fa-2x fa-fw fa-inverse"></i></div>
+                            </div>
+                            <div class="flex-1 text-right md:text-center"> 
+                                <h5 class="font-bold uppercase text-gray-400">Total Pending Accounts</h5>
+                                <h3 class="font-bold text-3xl text-gray-600">{{$pending_farmers}} <span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Metric Card-->
+                </div>
+                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                    <!--Metric Card-->
+                    <div class="bg-gray-800 border border-gray-800 rounded shadow p-2">
+                        <div class="flex flex-row items-center">
+                            <div class="flex-shrink pr-4">
+                                <div class="rounded p-3 bg-yellow-600"><i class="fas fa-user-slash fa-2x fa-fw fa-inverse"></i></div>
+                            </div>
+                            <div class="flex-1 text-right md:text-center">
+                                <h5 class="font-bold uppercase text-gray-400">Total Suspended Accounts</h5>
+                                <h3 class="font-bold text-3xl text-gray-600">{{$suspended_accounts}} <span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Metric Card-->
+                </div>
+                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                    <!--Metric Card-->
+                    <div class="bg-gray-800 border border-gray-800 rounded shadow p-2">
+                        <div class="flex flex-row items-center">
+                            <div class="flex-shrink pr-4">
+                                <div class="rounded p-3 bg-blue-600"><i class="fas fa-heartbeat fa-2x fa-fw fa-inverse"></i></div>
+                            </div>
+                            <div class="flex-1 text-right md:text-center">
+                                <h5 class="font-bold uppercase text-gray-400">Active Users</h5>
+                                <h3 class="font-bold text-3xl text-gray-600">{{$active_users}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Metric Card-->
+                </div>
+                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                    <!--Metric Card-->
+                    <div class="bg-gray-800 border border-gray-800 rounded shadow p-2">
+                        <div class="flex flex-row items-center">
+                            <div class="flex-shrink pr-4">
+                                <div class="rounded p-3 bg-indigo-600"><i class="fas fa-server fa-2x fa-fw fa-inverse"></i></div>
+                            </div>
+                            <div class="flex-1 text-right md:text-center">
+                                <h5 class="font-bold uppercase text-gray-400">Total Requests</h5>
+                                <h3 class="font-bold text-3xl text-gray-600"></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Metric Card-->
+                </div>
+                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                    <!--Metric Card-->
+                    <div class="bg-gray-800 border border-gray-800 rounded shadow p-2">
+                        <div class="flex flex-row items-center">
+                            <div class="flex-shrink pr-4">
+                                <div class="rounded p-3 bg-red-600"><i class="fas fa-inbox fa-2x fa-fw fa-inverse"></i></div>
+                            </div>
+                            <div class="flex-1 text-right md:text-center">
+                                <h5 class="font-bold uppercase text-gray-400">Issues</h5>
+                                <h3 class="font-bold text-3xl text-gray-600">3 <span class="text-red-500"><i class="fas fa-caret-up"></i></span></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Metric Card-->
+                </div>
             </div>
-        </div>
-    </body>
 
-    </x-app-layout>
+			<!--Divider-->
+			<hr class="border-b-2 border-gray-600 my-8 mx-4">
+
+            <div class="flex flex-row flex-wrap flex-grow mt-2">
+
+                <div class="w-full md:w-1/2 p-3">
+                    <!--Graph Card-->
+                    <div class="bg-white border border-white rounded shadow" style="width:1100px;">
+                        <div class="border-b border-white p-3">
+                            <h5 class="font-bold uppercase text-gray-600">Graph</h5>
+                        </div>
+                        <div class="p-5">
+                            <canvas id="chartjs-0" class="chartjs" width="undefined" height="undefined"></canvas>
+                            <script>
+                                 var users =  <?php echo json_encode($users) ?>;
+                                new Chart(document.getElementById("chartjs-0"), {
+                                    "type": "line",
+                                    "data": {
+                                        "labels": ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                                        "datasets": [{
+                                            "label": "New Users",
+                                            "data": users,
+                                            "fill": false,
+                                            "borderColor": "#1F2937",
+                                            "lineTension": 0.1
+                                        }]
+                                    },
+                                    "options": {}
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <!--/Graph Card-->
+                </div>
+            </div>					
+			<!--/ Console Content-->		
+		</div>
+	</div> 
+	<!--/container-->
+</body>
+</html>
+
+</x-app-layout>

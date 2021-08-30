@@ -33,7 +33,7 @@
                                 </div>
                               <br> <br>
                                 
-                                  Temperature: {{  $weather->temperature }} &deg;F <br>
+                                  Temperature: {{  $weather->temperature }} &deg;C <br>
                                   Atmospheric Pressure: {{  $weather->pressure }} <br>
                                   Humidity: {{  $weather->humidity }}
                                 </div>
