@@ -1,34 +1,51 @@
 <x-app-layout>
-    <x-slot name="header">
+<x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Crop Recommendations') }} 
+            {{ __('Crop Suggestions') }} 
         </h2>
     </x-slot>
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            @if ($message = Session::get('success'))
-            <x-alert type="success" class="border border-t-0  rounded-b bg-green-500 bg-opacity-25 px-4 py-3 text-green-700" />
-            @else
-                <x-alert type="danger" class="border border-t-0  rounded-b bg-red-500 bg-opacity-25 px-4 py-3 text-red-700" />
-            @endif
-            
-        </div>
-        
-                    @foreach ($cropsuggestions as $cropsuggestion)
-                        <div class="card" style="width: 100%;">
-                                <div class="card-body">
-                                    <h5> <a href="{{ route('cropsuggestions.show',$cropsuggestion->id) }}"class="font-weight-bold mb-3"> Title: {{ $cropsuggestion->title }}</a> </h5>
-                                    <p class="mb-0">Crop Name: {{ $cropsuggestion->crop->name }}</p>
+  <!-- Tailwind CSS -->
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
 
-                                </div>
-                                <div class="card-body">
-                                    <a href="{{ route('cropsuggestions.show',$cropsuggestion->id) }}" class="card-link">View</a>
-                                </div>
-                        </div><br>
-                    @endforeach
-              
-  
-  
+
+  <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+    <!--Card 1-->
+    @foreach ($cropsuggestions as $cropsuggestion)
+      <div class="rounded overflow-hidden shadow-lg" style="height:70%;">
+            <img class="w-full" src="{{ asset('assets\images\weather.svg') }}" alt="{{ $cropsuggestion->crop->name }}" style="height:20%;">
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">Crop Name: {{ $cropsuggestion->crop->name }}</div>
+              <div class="font-bold text-l mb-2">Conditions Required</div>
+              <p class="text-gray-700 text-base">
+                    Minimum Temperature: {{  $cropsuggestion->crop->lowest_temperature }} &deg;C <br>
+                    Maximum Temperature: {{  $cropsuggestion->crop->highest_temperature }} &deg;C <br>
+                    Minimum Atmospheric Pressure: {{  $cropsuggestion->crop->lowest_atmospheric_pressure }} <br>
+                    Maximum Atmospheric Pressure: {{  $cropsuggestion->crop->highest_atmospheric_pressure }} <br>
+                    Minimum Humidity: {{  $cropsuggestion->crop->lowest_humidity }} <br>
+                    Maximum Humidity: {{  $cropsuggestion->crop->highest_humidity }}
+              </p>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+              @if($cropsuggestion->crop->in_demand == 1)
+              <span class="inline-block bg-gray-800 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">ondemand</span>
+              @endif
+              <span class="inline-block bg-green-700 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Average market price: {{ $cropsuggestion->crop->average_market_price}}</span>
+
+              <span class="inline-block bg-gray-800 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Minimum Kgs: {{ $cropsuggestion->crop->amount_in_kg}}</span>
+            </div>
+          </div>
+    @endforeach
+   
+
+</body>
+</html>
 </x-app-layout>
-

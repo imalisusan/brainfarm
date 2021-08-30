@@ -39,7 +39,6 @@ class ExpendituresTableView extends TableView
             Header::title('Date')->sortBy('date'),
             Header::title('Amount')->sortBy('amount'),
             Header::title('Description')->sortBy('description'),
-            Header::title('Farmer')->sortBy(''),
             Header::title('Actions'),
             ];
     }
@@ -56,7 +55,6 @@ class ExpendituresTableView extends TableView
             $expenditure->date,
             $expenditure->amount,
             $expenditure->description,
-            $expenditure->farmer->name,
         ];
     }
 

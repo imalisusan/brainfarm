@@ -21,22 +21,25 @@ class ExpenditureSeeder extends Seeder
                 'amount' => '19000', 
                 'description' => 'Bought Manure for the farm', 
                 'farmer_id' => '1',
-            ],
-
-            [
-                'type' => 'Manure',
-                'date' => '2021-07-31',
-                'amount' => '20000', 
-                'description' => 'Bought Manure for the farm', 
-                'farmer_id' => '1',
+                'created_at'=> '2021-06-30 08:36:13'
             ],
 
             [
                 'type' => 'Plough',
                 'date' => '2021-07-31',
-                'amount' => '19000', 
+                'amount' => '20000', 
+                'description' => 'Bought a Plough for the farm', 
+                'farmer_id' => '1',
+                'created_at'=> '2021-07-30 08:36:13'
+            ],
+
+            [
+                'type' => 'Tractor',
+                'date' => '2021-07-31',
+                'amount' => '250000', 
                 'description' => 'Bought a plough', 
                 'farmer_id' => '1',
+                'created_at'=> '2021-05-30 08:36:13'
             ],
         ];
 
@@ -47,6 +50,7 @@ class ExpenditureSeeder extends Seeder
                    'amount' => $expenditure['amount'],
                    'description' => $expenditure['description'],
                    'farmer_id' => $expenditure['farmer_id'],
+                   'created_at' => $expenditure['created_at'],
                  ]);
         }
     }

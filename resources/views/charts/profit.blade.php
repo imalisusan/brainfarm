@@ -8,22 +8,22 @@
   
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript">
-    var crop_prices =  <?php echo json_encode($crop_prices) ?>;
-    var names =  <?php echo json_encode($names) ?>;
+    var income_amount =  <?php echo json_encode($income_amount) ?>;
+    var expenditure_amount =  <?php echo json_encode($expenditure_amount) ?>;
    
     Highcharts.chart('container', {
         title: {
-            text: 'Crop Market Price'
+            text: 'Income/Expenditure Variation'
         },
         subtitle: {
             text: 'Source: highcharts.com'
         },
          xAxis: {
-            categories: names
-            },
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', ]
+        },
         yAxis: {
             title: {
-                text: 'Market Price Per Kg'
+                text: 'Amount'
             }
         },
         legend: {
@@ -37,9 +37,16 @@
             }
         },
         series: [{
-            name: 'Market Price Per Kg',
-            data: crop_prices
-        }],
+            name: 'Income',
+            data: income_amount,   
+        },
+
+        {
+            name: 'Expenditure',
+            data: expenditure_amount,     
+        },
+    
+    ],
         responsive: {
             rules: [{
                 condition: {

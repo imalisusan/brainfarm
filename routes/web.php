@@ -59,11 +59,13 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/suspend/{farmer}',[FarmerController::class, 'suspend_farmer'])->name('farmers.suspend');
     Route::get('/reset/{farmer}',[FarmerController::class, 'reset_password_farmer'])->name('farmers.reset');
     Route::get('pending/accounts', [FarmerController::class, 'pending_accounts'])->name('farmers.pending');
+    Route::get('suspended/accounts', [FarmerController::class, 'suspended_accounts'])->name('farmers.suspended');
 
     Route::get('/charts/crops', [ChartController::class, 'crops'])->name('charts.crops');
     Route::get('/charts/users', [ChartController::class, 'users'])->name('charts.users');
     Route::get('/charts/income', [ChartController::class, 'income'])->name('charts.income');
     Route::get('/charts/expenditure', [ChartController::class, 'expenditure'])->name('charts.expenditure');
+    Route::get('/charts/profit', [ChartController::class, 'profit'])->name('charts.profit');
 
 
 });

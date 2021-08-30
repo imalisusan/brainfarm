@@ -26,6 +26,7 @@ class UserSeeder extends Seeder
                 'city' => 'Nairobi',
                 'status' => 'Approved',
                 'email_verified_at' => '2021-07-31 15:25:08',
+                'created_at'=> '2021-01-30 08:36:13'
             ],
             [
                 'name' => 'Maya Bororio',
@@ -36,6 +37,7 @@ class UserSeeder extends Seeder
                 'city' => 'Kisumu',
                 'status' => 'Pending',
                 'email_verified_at' => '2021-07-31 15:25:08',
+                'created_at'=> '2021-03-30 08:36:13'
             ],
             [
                 'name' => 'Susan Lungaho',
@@ -46,11 +48,24 @@ class UserSeeder extends Seeder
                 'city' => 'Mombasa',  
                 'status' => 'Pending',  
                 'email_verified_at' => '2021-07-31 15:25:08',
+                'created_at'=> '2021-08-30 08:36:13'
+            ],
+
+            [
+                'name' => 'Maya Test',
+                'email' => 'mayatest@gmail.com',
+                'phone' => '+254712345678', 
+                'address' => 'OTC Hse, 2nd Flr Konza Rd', 
+                'password' => '12345678',
+                'city' => 'Mombasa',  
+                'status' => 'Suspended',  
+                'email_verified_at' => '2021-07-31 15:25:08',
+                'created_at'=> '2021-08-30 08:36:13'
             ],
         ];
 
         foreach ($users as $user) {
-            $user = User::create([
+            $new_user = User::create([
                    'name' => $user['name'],
                    'email' => $user['email'],
                    'phone' => $user['phone'],
@@ -58,6 +73,7 @@ class UserSeeder extends Seeder
                    'city' => $user['city'],
                    'password' => Hash::make($user['password']),
                    'email_verified_at' => $user['email_verified_at'],
+                   'created_at' => $user['created_at'],
                  ]);
 
             $farmer = Farmer::create([
@@ -65,10 +81,12 @@ class UserSeeder extends Seeder
                     'email' => $user['email'],
                     'phone' => $user['phone'],
                     'address' => $user['address'],
-                    'user_id' => $user->id,
+                    'user_id' => $new_user->id,
+                    'status' => $user['status'],
                   ]);
                  
-                 $user->attachRole('administrator');
+                 $new_user->attachRole('administrator');
+                 $new_user->attachRole('farmer');
         }
     }
 }

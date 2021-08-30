@@ -30,7 +30,7 @@ class CropSuggestionController extends Controller
         foreach($crops as  $crop)
         {
             //check if temp is in range
-            if($farmer->temperature >= $crop->lowest_temperature  && $farmer->temperature <= $crop->highest_temperature)
+            if(($crop->lowest_temperature <= $farmer->temperature)  && ($farmer->temperature <= $crop->highest_temperature))
             {
                 $temperature = 0;
             }
@@ -39,7 +39,7 @@ class CropSuggestionController extends Controller
                 $temperature = 1;
             }
              //check if humidity is in range
-             if($farmer->humidity >= $crop->lowest_humidity  && $farmer->humidity <= $crop->highest_humidity)
+             if(($crop->lowest_humidity <= $farmer->humidity)  && ($farmer->humidity <= $crop->highest_humidity))
              {
                 $humidity = 0;
              }
@@ -50,10 +50,21 @@ class CropSuggestionController extends Controller
               // if all conditions are satisifed, save the suggestion
               if($humidity== 0 && $temperature == 0)
               {
-                $suggestion = new CropSuggestion();  
-                $suggestion->farmer_id = $farmer->id;
-                $suggestion->crop_id = $crop->id;
-                $suggestion->save();
+                  $crop_suggestion = CropSuggestion::where([
+                      'farmer_id' => $farmer->id,
+                      'crop_id' => $crop->id
+                      ])->first();
+                      if($crop_suggestion == NULL)
+                      {
+                        $suggestion = new CropSuggestion();  
+                        $suggestion->farmer_id = $farmer->id;
+                        $suggestion->crop_id = $crop->id;
+                        $suggestion->save();
+                      }
+              }
+              else
+              {
+                  
               }
         }
         $cropsuggestions = CropSuggestion::where('farmer_id', $farmer->id)->get();

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Crops') }} 
+            {{ __('Suspended Farmers') }} 
         </h2>
     </x-slot>
 
@@ -15,18 +15,11 @@
             
             <!-- component -->
             <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 pr-10 lg:px-8">
-                <div
-                    class="align-middle rounded-tl-lg rounded-tr-lg inline-block w-full py-4 overflow-hidden bg-white shadow-lg px-12">
-                    <div class="flex justify-between">
-                        <a type="button" href="{{ route('crops.create') }}"
-                        class="px-5 py-2 border-green-500 border text-white bg-green-700 rounded transition duration-300 hover:text-green-700 hover:bg-white focus:outline-none place-self-center">
-                            Add Crop</a>
-                    </div>
-                </div>
+                
                 <div
                     class="align-middle inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg">
                     <body>
-                        @livewire('crops-table-view')
+                        @livewire('suspended-accounts-table-view')
                     </body>
                     <div class="my-4 work-sans">
                     </div>
