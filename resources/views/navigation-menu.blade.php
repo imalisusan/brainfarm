@@ -58,7 +58,7 @@
                                     </x-jet-dropdown-link>
 
                                     <x-jet-dropdown-link href="{{ route('charts.profit') }}" style="background-color: #2D3748; color:#FFFFFF;">
-                                        {{ __('Profit/ Loss Growth') }}
+                                        {{ __('Income/ Expenditure Variation') }}
                                     </x-jet-dropdown-link>
                             </x-slot>
                         </x-jet-dropdown>

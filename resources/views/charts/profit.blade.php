@@ -38,14 +38,12 @@
         },
         series: [{
             name: 'Income',
-            data: income_amount,
-            dashStyle: 'shortdot'       
+            data: income_amount,   
         },
 
         {
             name: 'Expenditure',
-            data: expenditure_amount,
-            dashStyle: 'dash'       
+            data: expenditure_amount,     
         },
     
     ],

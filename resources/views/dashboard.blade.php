@@ -92,7 +92,7 @@
                               Did You Know?
                             </p>
                             <div class="text-green-700 font-bold text-xl mb-2">Today's Tip</div>
-                            <p class="text-gray-700 text-base"> {{ $tip->description }}</p>
+                            <p class="text-gray-700 "> {{ $tip->description }}</p>
                             </div>
                             <div class="flex items-center">
                             
