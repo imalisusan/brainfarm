@@ -95,6 +95,10 @@
                                         {{ __('Pending Farmers') }}
                                     </x-jet-dropdown-link>
 
+                                    <x-jet-dropdown-link href="{{ route('farmers.suspended') }}" style="background-color: #2D3748; color:#FFFFFF;">
+                                        {{ __('Suspended Farmers') }}
+                                    </x-jet-dropdown-link>
+
                                     <x-jet-dropdown-link href="{{ route('crops.index') }}"  style="background-color: #2D3748; color:#FFFFFF;">
                                         {{ __('Crops') }}
                                     </x-jet-dropdown-link>

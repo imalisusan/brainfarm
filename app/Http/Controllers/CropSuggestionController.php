@@ -68,8 +68,6 @@ class CropSuggestionController extends Controller
               }
         }
         $cropsuggestions = CropSuggestion::where('farmer_id', $farmer->id)->get();
-       // dd($cropsuggestions);
-
         return view('cropsuggestions.index', compact('cropsuggestions'));
     }
 

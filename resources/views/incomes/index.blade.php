@@ -18,13 +18,9 @@
                 <div
                     class="align-middle rounded-tl-lg rounded-tr-lg inline-block w-full py-4 overflow-hidden bg-white shadow-lg px-12">
                     <div class="flex justify-between">
-                        
-                
                         <a type="button" href="{{ route('incomes.create') }}" style="float:right;"
                             class="px-5 py-2 border-green-500 border text-white bg-green-700 rounded transition duration-300 hover:text-green-700 hover:bg-white focus:outline-none place-self-center">
                             Add Income</a>
-                 
-                       
                     </div>
                 </div>
                 <div

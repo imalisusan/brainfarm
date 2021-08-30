@@ -21,14 +21,17 @@ class FarmerController extends Controller
     {
         $farmers = Farmer::latest()->paginate(20);
 
-        return view('farmers.index', compact('farmers'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('farmers.index', compact('farmers'));
     }
 
     public function pending_accounts(Request $request)
     {
-        $farmers = Farmer::latest()->paginate(20);
+        return view('farmers.pending');
+    }
 
-        return view('farmers.pending', compact('farmers'))->with('i', (request()->input('page', 1) - 1) * 5);
+    public function suspended_accounts(Request $request)
+    {
+        return view('farmers.suspended');
     }
 
     public function create()

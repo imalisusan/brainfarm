@@ -12,7 +12,6 @@ class CountyController extends Controller
     public function index(Request $request)
     {
         $counties = County::latest()->paginate(20);
-
         return view('counties.index', compact('counties'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -23,7 +22,6 @@ class CountyController extends Controller
 
     public function store(StoreCountyRequest $request)
     {
-        //dd($request);
         $validated = $request->validated();
      
         County::create($validated);
@@ -33,7 +31,6 @@ class CountyController extends Controller
 
     public function show(Request $request, County $county)
     {
-
         return view('counties.show', compact('county'));
     } 
      
@@ -52,7 +49,6 @@ class CountyController extends Controller
     public function destroy(County $county)
     {
         $county->delete();
-
         return redirect()->route('counties.index')->with('success','County deleted successfully');
     }
 }
