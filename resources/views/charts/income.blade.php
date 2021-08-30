@@ -18,7 +18,7 @@
             text: 'Source: highcharts.com'
         },
          xAxis: {
-            categories: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']
+            categories: [ 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May']
         },
         yAxis: {
             title: {

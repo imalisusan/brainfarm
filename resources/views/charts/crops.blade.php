@@ -24,7 +24,7 @@
         },
         yAxis: {
             title: {
-                text: 'Market Price'
+                text: 'Market Price Per Kg'
             }
         },
         legend: {
@@ -38,7 +38,7 @@
             }
         },
         series: [{
-            name: 'Market Price',
+            name: 'Market Price Per Kg',
             data: crop_prices
         }],
         responsive: {
