@@ -22,7 +22,10 @@ class PendingAccountsTableView extends TableView
      */
     public function repository(): Builder
     {
-        return Farmer::query()->where('status', "Pending");
+        return Farmer::query()->where([
+            'status', "Pending",
+            'status', "Suspended",
+        ]);
     }
 
     /**
