@@ -20,13 +20,23 @@ class IncomeSeeder extends Seeder
                 'amount' => '100000', 
                 'description' => 'Received cash from the government', 
                 'farmer_id' => '1',
+                'created_at'=> '2021-06-30 08:36:13'
+            ],
+
+            [
+                'date' => '2021-07-31',
+                'amount' => '60000', 
+                'description' => 'Received cash from the government', 
+                'farmer_id' => '1',
+                'created_at'=> '2021-07-30 08:36:13'
             ],
 
             [
                 'date' => '2021-07-31',
                 'amount' => '6000', 
-                'description' => 'Received cash from the government', 
+                'description' => 'Sold some fruits at the market', 
                 'farmer_id' => '1',
+                'created_at'=> '2021-07-30 08:36:13'
             ],
 
          
@@ -38,6 +48,7 @@ class IncomeSeeder extends Seeder
                    'amount' => $income['amount'],
                    'description' => $income['description'],
                    'farmer_id' => $income['farmer_id'],
+                   'created_at' => $income['created_at'],
                  ]);
         }
     }

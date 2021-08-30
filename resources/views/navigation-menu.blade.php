@@ -18,11 +18,7 @@
 
                    @role('farmer')
                     <x-jet-nav-link href="{{ route('incomes.index') }}" :active="request()->routeIs('incomes')" class="text-white text-sm font-small" style="color:#FFFFFF;">
-                        {{ __('Income') }}
-                    </x-jet-nav-link>
-
-                    <x-jet-nav-link href="{{ route('expenditures.index') }}" :active="request()->routeIs('expenditures.index')" class="text-white text-sm font-small" style="color:#FFFFFF;">
-                        {{ __('Expenditure') }}
+                        {{ __('Cash Flow') }}
                     </x-jet-nav-link>
 
                     <x-jet-nav-link href="{{ route('farmercrops.index') }}" :active="request()->routeIs('farmercrops')" class="text-white text-sm font-small" style="color:#FFFFFF;">
@@ -39,7 +35,7 @@
                             <x-slot name="trigger" >
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
-                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-grey-800 hover:bg-grey-800 hover:text-white hover:bg-gray-800 focus:outline-none focus:bg-gray-50 active:bg-grey-800  active:text-white transition ease-in-out duration-150">
+                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-grey-800 hover:bg-grey-800 hover:text-white hover:bg-gray-800 focus:outline-none focus:bg-grey-800 active:bg-grey-800  active:text-white transition ease-in-out duration-150">
                                        Reports                                                                                                        
                                             <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -72,12 +68,12 @@
 
                     @role('administrator')
                      <!-- Administartor Links -->
-                     <div class="hidden sm:flex sm:items-center sm:ml-6">
-                        <x-jet-dropdown>
+                     <div class="hidden sm:flex sm:items-center sm:ml-6" >
+                        <x-jet-dropdown >
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
-                                    class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-grey-800 hover:bg-grey-800 hover:text-white hover:bg-gray-800 focus:outline-none focus:bg-gray-50 active:bg-grey-800 transition ease-in-out duration-150">
+                                    class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-grey-800 hover:bg-grey-800 hover:text-white hover:bg-gray-800 focus:outline-none focus:bg-grey-800 active:bg-grey-800 transition ease-in-out duration-150">
                                         Administrator Panel                                                                                                             
                                             <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />

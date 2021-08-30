@@ -39,6 +39,8 @@
               <span class="inline-block bg-gray-800 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">ondemand</span>
               @endif
               <span class="inline-block bg-gray-800 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Average market price: {{ $cropsuggestion->crop->average_market_price}}</span>
+
+              <span class="inline-block bg-gray-800 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Amount in kgs: {{ $cropsuggestion->crop->amount_in_kg}}</span>
             </div>
           </div>
     @endforeach

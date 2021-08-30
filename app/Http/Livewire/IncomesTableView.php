@@ -38,7 +38,6 @@ class IncomesTableView extends TableView
             Header::title('Date')->sortBy('date'),
             Header::title('Amount')->sortBy('amount'),
             Header::title('Description')->sortBy('description'),
-            Header::title('Farmer')->sortBy(''),
             Header::title('Actions'),
             ];
     }
@@ -54,7 +53,6 @@ class IncomesTableView extends TableView
             $income->date,
             $income->amount,
             $income->description,
-            $income->farmer->name,
         ];
     }
 

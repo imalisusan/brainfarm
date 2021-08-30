@@ -80,8 +80,9 @@ class UserSeeder extends Seeder
                     'email' => $user['email'],
                     'phone' => $user['phone'],
                     'address' => $user['address'],
+                    'status' => $user['status'],
                     'user_id' => $user->id,
-                    'created_at' => $user->created_at,
+                    'created_at' => $user['created_at'],
                   ]);
                  
                  $user->attachRole('administrator');

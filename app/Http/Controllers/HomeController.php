@@ -20,7 +20,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $user = Auth::user();
-        if ($user->hasRole(['admin'])) 
+        if ($user->hasRole(['farmer'])) 
         {
         
             $weather = Util::get_weather_condition();

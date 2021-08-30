@@ -30,7 +30,7 @@ class ExpenditureController extends Controller
         $validated['farmer_id'] = $farmer->id;
         Expenditure::create($validated);
 
-        return redirect()->route('expenditures.index')->with('success','Expenditure created successfully.');
+        return redirect()->route('incomes.index')->with('success','Expenditure created successfully.');
     }
 
     public function show(Request $request, Expenditure $expenditure)
