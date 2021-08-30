@@ -50,10 +50,17 @@ class CropSuggestionController extends Controller
               // if all conditions are satisifed, save the suggestion
               if($humidity== 0 && $temperature == 0)
               {
-                $suggestion = new CropSuggestion();  
-                $suggestion->farmer_id = $farmer->id;
-                $suggestion->crop_id = $crop->id;
-                $suggestion->save();
+                  $crop_suggestion = CropSuggestion::where([
+                      'farmer_id' => $farmer->id,
+                      'crop_id' => $crop->id
+                      ])->first();
+                      if($crop_suggestion == NULL)
+                      {
+                        $suggestion = new CropSuggestion();  
+                        $suggestion->farmer_id = $farmer->id;
+                        $suggestion->crop_id = $crop->id;
+                        $suggestion->save();
+                      }
               }
               else
               {
@@ -61,8 +68,6 @@ class CropSuggestionController extends Controller
               }
         }
         $cropsuggestions = CropSuggestion::where('farmer_id', $farmer->id)->get();
-       // dd($cropsuggestions);
-
         return view('cropsuggestions.index', compact('cropsuggestions'));
     }
 

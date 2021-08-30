@@ -26,9 +26,11 @@ class ChartController extends Controller
     public function crops(Request $request)
     {
         $crop_prices = Crop::all()->pluck('average_market_price');
+        $crop_kgs = Crop::all()->pluck('amount_in_kgs');
+
         $names = Crop::all()->pluck('name');
 
-        return view('charts.crops', compact('crop_prices', 'names'));
+        return view('charts.crops', compact('crop_prices', 'names', 'crop_kgs'));
     }
 
     public function income(Request $request)

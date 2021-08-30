@@ -35,10 +35,12 @@
               </p>
             </div>
             <div class="px-6 pt-4 pb-2">
-              @if($cropsuggestion->crop->in_demand)
+              @if($cropsuggestion->crop->in_demand == 1)
               <span class="inline-block bg-gray-800 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">ondemand</span>
               @endif
-              <span class="inline-block bg-gray-800 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Average market price: {{ $cropsuggestion->crop->average_market_price}}</span>
+              <span class="inline-block bg-green-700 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Average market price: {{ $cropsuggestion->crop->average_market_price}}</span>
+
+              <span class="inline-block bg-gray-800 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Minimum Kgs: {{ $cropsuggestion->crop->amount_in_kg}}</span>
             </div>
           </div>
     @endforeach

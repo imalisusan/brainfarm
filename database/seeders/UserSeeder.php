@@ -65,7 +65,7 @@ class UserSeeder extends Seeder
         ];
 
         foreach ($users as $user) {
-            $user = User::create([
+            $new_user = User::create([
                    'name' => $user['name'],
                    'email' => $user['email'],
                    'phone' => $user['phone'],
@@ -73,6 +73,7 @@ class UserSeeder extends Seeder
                    'city' => $user['city'],
                    'password' => Hash::make($user['password']),
                    'email_verified_at' => $user['email_verified_at'],
+                   'created_at' => $user['created_at'],
                  ]);
 
             $farmer = Farmer::create([
@@ -80,11 +81,12 @@ class UserSeeder extends Seeder
                     'email' => $user['email'],
                     'phone' => $user['phone'],
                     'address' => $user['address'],
-                    'user_id' => $user->id,
-                    'created_at' => $user->created_at,
+                    'user_id' => $new_user->id,
+                    'status' => $user['status'],
                   ]);
                  
-                 $user->attachRole('administrator');
+                 $new_user->attachRole('administrator');
+                 $new_user->attachRole('farmer');
         }
     }
 }

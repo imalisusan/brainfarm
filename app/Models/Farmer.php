@@ -15,7 +15,7 @@ class Farmer extends Model
         'phone',
         'address',
         'user_id',
-        'pending',
+        'status',
     ];
 
     public function user()
