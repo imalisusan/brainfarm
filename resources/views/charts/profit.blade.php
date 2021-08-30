@@ -8,11 +8,14 @@
   
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript">
-    var amount =  <?php echo json_encode($amount) ?>;
+    var income_amount =  <?php echo json_encode($income_amount) ?>;
+    var expenditure_amount =  <?php echo json_encode($expenditure_amount) ?>;
+    var income_date =  <?php echo json_encode($income_date) ?>;
+    var expenditure_date =  <?php echo json_encode($income_amount) ?>;
    
     Highcharts.chart('container', {
         title: {
-            text: 'Income Variation'
+            text: 'Income/Expenditure Variation'
         },
         subtitle: {
             text: 'Source: highcharts.com'
@@ -37,7 +40,13 @@
         },
         series: [{
             name: 'Amount',
-            data: amount
+            data: [{
+                x: Date.UTC(2021, 10, 2),
+                y: income_amount
+            }, {
+                x: Date.UTC(2021, 10, 2),
+                y: expenditure_amount
+            },]
         }],
         responsive: {
             rules: [{
