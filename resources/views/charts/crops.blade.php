@@ -20,8 +20,7 @@
         },
          xAxis: {
             categories: names
-            //categories: ['Avocado', 'Maize', 'Cabbage', 'Mango', 'Cashew Nuts', 'Cassava', 'Coffee', 'Rice', 'Potato', 'Sweet Potato', 'Tea', 'Wheat', 'Tomato', 'Orange', 'Onion', 'Banana', 'Peas', 'Lemon', 'Kale', 'Millet', 'Sorghum', 'Beans', 'Carrot', 'Pineapple', 'Pawpaw']
-        },
+            },
         yAxis: {
             title: {
                 text: 'Market Price Per Kg'
