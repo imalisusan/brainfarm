@@ -25,6 +25,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '0', 
                 'highest_atmospheric_pressure' => '2500', 
                 'average_market_price' => '2000.00',
+                'amount_in_kg' => '90',
                 'in_demand' => '0',
             ],
             [
@@ -37,6 +38,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '40000', 
                 'highest_atmospheric_pressure' => '6000', 
                 'average_market_price' => '2066.667',
+                'amount_in_kg' => '90',
                 'in_demand' => '1',
             ],
             [
@@ -49,6 +51,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '95', 
                 'highest_atmospheric_pressure' => '98',
                 'average_market_price' => '2092.5',
+                'amount_in_kg' => '126',
                 'in_demand' => '0', 
             ],
             [
@@ -61,6 +64,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '0', 
                 'highest_atmospheric_pressure' => '600', 
                 'average_market_price' => '2533.333',
+                'amount_in_kg' => '126',
                 'in_demand' => '0',
             ],
             [
@@ -73,6 +77,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '0', 
                 'highest_atmospheric_pressure' => '700', 
                 'average_market_price' => '900',
+                'amount_in_kg' => '20',
                 'in_demand' => '0',
             ],
             [
@@ -85,6 +90,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '250', 
                 'highest_atmospheric_pressure' => '1500', 
                 'average_market_price' => '2675',
+                'amount_in_kg' => '99',
                 'in_demand' => '0',
             ],
             [
@@ -97,6 +103,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '1000', 
                 'highest_atmospheric_pressure' => '6000', 
                 'average_market_price' => '700',
+                'amount_in_kg' => '1',
                 'in_demand' => '0',
             ],
             [
@@ -109,6 +116,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '60', 
                 'highest_atmospheric_pressure' => '3050', 
                 'average_market_price' => '170',
+                'amount_in_kg' => '1',
                 'in_demand' => '1',
             ],
             [
@@ -121,6 +129,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '1600', 
                 'highest_atmospheric_pressure' => '3200', 
                 'average_market_price' => '3200',
+                'amount_in_kg' => '50',
                 'in_demand' => '1',
             ],
             [
@@ -133,6 +142,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '0', 
                 'highest_atmospheric_pressure' => '2500', 
                 'average_market_price' => '2900',
+                'amount_in_kg' => '98',
                 'in_demand' => '1',
             ],
             [
@@ -145,6 +155,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '700', 
                 'highest_atmospheric_pressure' => '3000', 
                 'average_market_price' => '140',
+                'amount_in_kg' => '1',
                 'in_demand' => '0',
             ],
             [
@@ -157,6 +168,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '1200', 
                 'highest_atmospheric_pressure' => '1800', 
                 'average_market_price' => '3000',
+                'amount_in_kg' => '90',
                 'in_demand' => '1',
             ],
             [
@@ -169,6 +181,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '1500', 
                 'highest_atmospheric_pressure' => '3000',
                 'average_market_price' => '4487.5',
+                'amount_in_kg' => '64',
                 'in_demand' => '1', 
             ],
             [
@@ -181,6 +194,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '0', 
                 'highest_atmospheric_pressure' => '2100', 
                 'average_market_price' => '3418.75',
+                'amount_in_kg' => '93',
                 'in_demand' => '0',
             ],
             [
@@ -193,6 +207,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '0', 
                 'highest_atmospheric_pressure' => '1900', 
                 'average_market_price' => '842.5',
+                'amount_in_kg' => '13',
                 'in_demand' => '1',
             ],
             [
@@ -205,6 +220,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '0', 
                 'highest_atmospheric_pressure' => '1800', 
                 'average_market_price' => '637.1429',
+                'amount_in_kg' => '14',
                 'in_demand' => '0',
             ],
             [
@@ -217,6 +233,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '750', 
                 'highest_atmospheric_pressure' => '5000', 
                 'average_market_price' => '2371.667',
+                'amount_in_kg' => '51',
                 'in_demand' => '0',
             ],
             [
@@ -229,6 +246,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '0', 
                 'highest_atmospheric_pressure' => '2000', 
                 'average_market_price' => '2807.143',
+                'amount_in_kg' => '95',
                 'in_demand' => '0',
             ],
             [
@@ -241,6 +259,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '800', 
                 'highest_atmospheric_pressure' => '2200', 
                 'average_market_price' => '3360.143',
+                'amount_in_kg' => '50',
                 'in_demand' => '1',
             ],
             [
@@ -253,6 +272,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '0', 
                 'highest_atmospheric_pressure' => '2400', 
                 'average_market_price' => '6637.5',
+                'amount_in_kg' => '90',
                 'in_demand' => '1',
             ],
             [
@@ -265,6 +285,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '0', 
                 'highest_atmospheric_pressure' => '2500', 
                 'average_market_price' => '3508.333',
+                'amount_in_kg' => '90',
                 'in_demand' => '1',
             ],
             [
@@ -277,6 +298,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '1000', 
                 'highest_atmospheric_pressure' => '2100',
                 'average_market_price' => '5962.5',
+                'amount_in_kg' => '90',
                 'in_demand' => '1', 
             ],
             [
@@ -289,6 +311,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '500', 
                 'highest_atmospheric_pressure' => '2000', 
                 'average_market_price' => '3496.25',
+                'amount_in_kg' => '13',
                 'in_demand' => '0',
             ],
             [
@@ -301,6 +324,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '0', 
                 'highest_atmospheric_pressure' => '2000', 
                 'average_market_price' => '771.00',
+                'amount_in_kg' => '13',
                 'in_demand' => '0',
             ],
             [
@@ -313,6 +337,7 @@ class CropSeeder extends Seeder
                 'lowest_atmospheric_pressure' => '0', 
                 'highest_atmospheric_pressure' => '2100', 
                 'average_market_price' => '2421.43',
+                'amount_in_kg' => '54',
                 'in_demand' => '0',
             ], 
 
@@ -331,6 +356,7 @@ class CropSeeder extends Seeder
                    'lowest_atmospheric_pressure' => $crop['lowest_atmospheric_pressure'],
                    'highest_atmospheric_pressure' => $crop['highest_atmospheric_pressure'],
                    'average_market_price' => $crop['average_market_price'],
+                   'amount_in_kg' => $crop['amount_in_kg'],
                    'in_demand' => $crop['in_demand'],
                  ]);
         }
