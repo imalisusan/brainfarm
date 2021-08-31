@@ -17,7 +17,7 @@ class CropSeeder extends Seeder
         $crops = [
             [
                 'name' => 'Avocado',
-                'string' => 'public/assets/images/crop_images/avocado.png',
+                'picture_path' => 'assets/images/crop_images/avocado.png',
                 'description' => 'Avocado plants', 
                 'lowest_temperature' => '16', 
                 'highest_temperature' => '25', 
@@ -31,7 +31,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Maize',
-                'string' => 'public/assets/images/crop_images/maize.png',
+                'picture_path' => 'assets/images/crop_images/maize.png',
                 'description' => 'Maize plants', 
                 'lowest_temperature' => '18', 
                 'highest_temperature' => '23', 
@@ -45,7 +45,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Cabbage',
-                'string' => 'public/assets/images/crop_images/cabbage.png',
+                'picture_path' => 'assets/images/crop_images/cabbage.png',
                 'description' => 'Cabbage plants', 
                 'lowest_temperature' => '16', 
                 'highest_temperature' => '21', 
@@ -59,7 +59,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Mango',
-                'string' => 'public/assets/images/crop_images/mango.png',
+                'picture_path' => 'assets/images/crop_images/mango.png',
                 'description' => 'Mango plants', 
                 'lowest_temperature' => '27', 
                 'highest_temperature' => '36', 
@@ -73,7 +73,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Cashew Nuts',
-                'string' => 'public/assets/images/crop_images/cashewnuts.png',
+                'picture_path' => 'assets/images/crop_images/cashewnuts.png',
                 'description' => 'Cashwe Nuts plants', 
                 'lowest_temperature' => '24', 
                 'highest_temperature' => '28', 
@@ -87,7 +87,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Cassava',
-                'string' => 'public/assets/images/crop_images/cassava.png',
+                'picture_path' => 'assets/images/crop_images/cassava.png',
                 'description' => 'Cassava plants', 
                 'lowest_temperature' => '25', 
                 'highest_temperature' => '29', 
@@ -101,7 +101,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Coffee',
-                'string' => 'public/assets/images/crop_images/coffee.png',
+                'picture_path' => 'assets/images/crop_images/coffee.png',
                 'description' => 'Coffee plants', 
                 'lowest_temperature' => '18', 
                 'highest_temperature' => '21', 
@@ -115,7 +115,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Rice',
-                'string' => 'public/assets/images/crop_images/rice.png',
+                'picture_path' => 'assets/images/crop_images/rice.png',
                 'description' => 'Rice plants', 
                 'lowest_temperature' => '15', 
                 'highest_temperature' => '27', 
@@ -129,6 +129,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Potato',
+                'picture_path' => 'assets/images/crop_images/potato.png',
                 'description' => 'Potato plants', 
                 'lowest_temperature' => '15', 
                 'highest_temperature' => '20', 
@@ -142,7 +143,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Sweet Potato',
-                'string' => 'public/assets/images/crop_images/sweetpotato.png',
+                'picture_path' => 'assets/images/crop_images/sweetpotato.png',
                 'description' => 'Sweet Potato plants', 
                 'lowest_temperature' => '24', 
                 'highest_temperature' => '35', 
@@ -156,7 +157,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Tea',
-                'string' => 'public/assets/images/crop_images/tea.png',
+                'picture_path' => 'assets/images/crop_images/tea.png',
                 'description' => 'Tea Leaves', 
                 'lowest_temperature' => '13', 
                 'highest_temperature' => '21', 
@@ -170,7 +171,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Wheat',
-                'string' => 'public/assets/images/crop_images/wheat.png',
+                'picture_path' => 'assets/images/crop_images/wheat.png',
                 'description' => 'Wheat plants', 
                 'lowest_temperature' => '21', 
                 'highest_temperature' => '24', 
@@ -184,7 +185,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Tomato',
-                'string' => 'public/assets/images/crop_images/tomato.png',
+                'picture_path' => 'assets/images/crop_images/tomato.png',
                 'description' => 'Tomato plants', 
                 'lowest_temperature' => '19', 
                 'highest_temperature' => '27', 
@@ -198,7 +199,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Orange',
-                'string' => 'public/assets/images/crop_images/orange.png',
+                'picture_path' => 'assets/images/crop_images/orange.png',
                 'description' => 'Orange fruits', 
                 'lowest_temperature' => '21', 
                 'highest_temperature' => '32', 
@@ -212,7 +213,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Onion',
-                'string' => 'public/assets/images/crop_images/onion.png',
+                'picture_path' => 'assets/images/crop_images/onion.png',
                 'description' => 'Onion plants', 
                 'lowest_temperature' => '13', 
                 'highest_temperature' => '35', 
@@ -226,7 +227,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Banana',
-                'string' => 'public/assets/images/crop_images/banana.png',
+                'picture_path' => 'assets/images/crop_images/banana.png',
                 'description' => 'Banana plants', 
                 'lowest_temperature' => '26', 
                 'highest_temperature' => '30', 
@@ -240,7 +241,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Peas',
-                'string' => 'public/assets/images/crop_images/peas.png',
+                'picture_path' => 'assets/images/crop_images/peas.png',
                 'description' => 'Peas plants', 
                 'lowest_temperature' => '16', 
                 'highest_temperature' => '21', 
@@ -254,7 +255,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Lemon',
-                'string' => 'public/assets/images/crop_images/lemon.png',
+                'picture_path' => 'assets/images/crop_images/lemon.png',
                 'description' => 'Lemon plants', 
                 'lowest_temperature' => '21', 
                 'highest_temperature' => '38', 
@@ -268,7 +269,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Kale',
-                'string' => 'public/assets/images/crop_images/kale.png',
+                'picture_path' => 'assets/images/crop_images/kale.png',
                 'description' => 'Kale plants', 
                 'lowest_temperature' => '13', 
                 'highest_temperature' => '24', 
@@ -282,7 +283,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Millet',
-                'string' => 'public/assets/images/crop_images/millet.png',
+                'picture_path' => 'assets/images/crop_images/millet.png',
                 'description' => 'Millet plants', 
                 'lowest_temperature' => '26', 
                 'highest_temperature' => '29', 
@@ -296,7 +297,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Sorghum',
-                'string' => 'public/assets/images/crop_images/sorghum.png',
+                'picture_path' => 'assets/images/crop_images/sorghum.png',
                 'description' => 'Sorghum plants', 
                 'lowest_temperature' => '26', 
                 'highest_temperature' => '34', 
@@ -310,7 +311,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Beans',
-                'string' => 'public/assets/images/crop_images/beans.png',
+                'picture_path' => 'assets/images/crop_images/beans.png',
                 'description' => 'Beans plants', 
                 'lowest_temperature' => '18', 
                 'highest_temperature' => '29', 
@@ -324,7 +325,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Carrot',
-                'string' => 'public/assets/images/crop_images/carrots.png',
+                'picture_path' => 'assets/images/crop_images/carrots.png',
                 'description' => 'Carrot plants', 
                 'lowest_temperature' => '15', 
                 'highest_temperature' => '18', 
@@ -338,7 +339,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Pineapple',
-                'string' => 'public/assets/images/crop_images/pinapple.png',
+                'picture_path' => 'assets/images/crop_images/pinapple.png',
                 'description' => 'Pineapple plants', 
                 'lowest_temperature' => '20', 
                 'highest_temperature' => '30', 
@@ -352,7 +353,7 @@ class CropSeeder extends Seeder
             ],
             [
                 'name' => 'Pawpaw',
-                'string' => 'public/assets/images/crop_images/pawpaw.png',
+                'picture_path' => 'assets/images/crop_images/pawpaw.png',
                 'description' => 'Pawpaw plants', 
                 'lowest_temperature' => '21', 
                 'highest_temperature' => '23', 
@@ -372,7 +373,7 @@ class CropSeeder extends Seeder
         foreach ($crops as $crop) {
             $crop = Crop::create([
                    'name' => $crop['name'],
-                   'image' => $crop['image'],
+                   'picture_path' => $crop['picture_path'],
                    'description' => $crop['description'],
                    'lowest_temperature' => $crop['lowest_temperature'],
                    'highest_temperature' => $crop['highest_temperature'],

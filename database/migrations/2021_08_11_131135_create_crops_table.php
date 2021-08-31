@@ -17,7 +17,7 @@ class CreateCropsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->string('image');
+            $table->string('picture_path')->nullable();
             $table->integer('lowest_temperature')->nullable();
             $table->integer('highest_temperature')->nullable();
             $table->integer('lowest_humidity')->nullable();
