@@ -34,8 +34,8 @@
                               <br> <br>
                                 
                                   Temperature: {{  $weather->temperature }} &deg;C <br><br>
-                                  Atmospheric Pressure: {{  $weather->pressure }} <br><br>
-                                  Humidity: {{  $weather->humidity }}
+                                  Atmospheric Pressure: {{  $weather->pressure }} Pascals<br><br>
+                                  Humidity: {{  $weather->humidity }}%
                                 </div>
                             </div>
                         </div>
