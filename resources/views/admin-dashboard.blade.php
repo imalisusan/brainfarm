@@ -122,7 +122,7 @@
                                 new Chart(document.getElementById("chartjs-0"), {
                                     "type": "line",
                                     "data": {
-                                        "labels": [ 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr','May'],
+                                        "labels": ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr','May'],
                                         "datasets": [{
                                             "label": "New Users",
                                             "data": users,
