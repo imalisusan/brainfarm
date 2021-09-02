@@ -23,7 +23,7 @@
                                     Your account is still on hold
                                 </label><hr><br>
                                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 text-blue-500" for="grid-first-name" style="font-size:12px;">
-                                Our administrator has to approve your account first before you can continue. <br> You are viewing his because 
+                                Our administrator has to approve your account first before you can continue. <br> You are viewing this because 
                                 your account approval is either pending or has been suspended. <br><br>
                                 Please be patient with us as we work to resolve this. This will take a maximum of three hours.
                                 </label>

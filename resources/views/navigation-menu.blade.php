@@ -102,10 +102,6 @@
                                     <x-jet-dropdown-link href="{{ route('crops.index') }}"  style="background-color: #2D3748; color:#FFFFFF;">
                                         {{ __('Crops') }}
                                     </x-jet-dropdown-link>
-
-                                    <x-jet-dropdown-link href="{{ route('counties.index') }}"  style="background-color: #2D3748; color:#FFFFFF;">
-                                        {{ __('Counties') }}
-                                    </x-jet-dropdown-link> 
                             </x-slot>
                         </x-jet-dropdown>
                     </div> 
