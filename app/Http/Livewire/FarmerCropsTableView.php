@@ -37,7 +37,9 @@ class FarmerCropsTableView extends TableView
     {
         return [
             Header::title('Crop Name')->sortBy('crop.name'),
-            Header::title('Amount')->sortBy('amount'),
+            Header::title('Amount(Acres)')->sortBy('amount'),
+            Header::title('Market Price Per Kg'),
+            Header::title('Minimum Kgs Required'),
             Header::title('Actions'),
             ];
     }
@@ -52,6 +54,8 @@ class FarmerCropsTableView extends TableView
         return [
             $farmercrop->crop->name,
             $farmercrop->amount,
+            $farmercrop->crop->average_market_price,
+            $farmercrop->crop->amount_in_kg,
             $farmercrop->created_at,
         ];
     }

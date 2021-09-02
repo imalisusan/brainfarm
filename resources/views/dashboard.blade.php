@@ -17,7 +17,7 @@
                             <div class="flex items-center">
                                 <img src="{{ asset('assets\images\weather.svg') }}" class="block h-9 w-auto" />
                                
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="" class="underline text-gray-900 dark:text-white">How's the weather like today?</a></div>
+                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="" class="underline text-gray-900 dark:text-white">How's the weather like this season?</a></div>
                             </div>
                             
                             <div class="ml-12">
@@ -34,8 +34,8 @@
                               <br> <br>
                                 
                                   Temperature: {{  $weather->temperature }} &deg;C <br><br>
-                                  Atmospheric Pressure: {{  $weather->pressure }} <br><br>
-                                  Humidity: {{  $weather->humidity }}
+                                  Atmospheric Pressure: {{  $weather->pressure }} atm <br><br>
+                                  Humidity: {{  $weather->humidity }} %
                                 </div>
                             </div>
                         </div>

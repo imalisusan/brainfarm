@@ -20,7 +20,7 @@
   <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
     <!--Card 1-->
     @foreach ($cropsuggestions as $cropsuggestion)
-      <div class="rounded overflow-hidden shadow-lg" style="height:82%;">
+      <div class="rounded overflow-hidden shadow-lg" style="height:85%;">
             <img class="w-full" src="{{ $cropsuggestion->crop->picture_path }}" alt="{{ $cropsuggestion->crop->name }}" style="height:20%; width: 45%; margin-left:10%;">
             <div class="px-6 py-4">
               <div class="font-bold text-xl mb-2">Crop Name: {{ $cropsuggestion->crop->name }}</div>

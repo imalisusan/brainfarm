@@ -43,7 +43,7 @@
 
 
         <div class="md:flex place-self-center">
-        <button type="submit" class="px-5 bg-white py-2 border-blue-500 border text-blue-500 rounded transition
-        duration-300 hover:bg-blue-700 hover:text-white focus:outline-none place-self-center">Save Expenditure</button>
+        <button type="submit" class="px-5 bg-green-700 py-2 border-green-700 border text-white rounded transition
+        duration-300 hover:bg-white hover:text-green-700 focus:outline-none place-self-center">Save Expenditure</button>
     </div>
 </div>
